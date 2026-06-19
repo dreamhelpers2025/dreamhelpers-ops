@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(167,243,208,0.06), transparent 60%),
+      radial-gradient(900px 500px at 110% 10%, rgba(125,211,252,0.05), transparent 60%),
+      #0b0c10;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-ink-800 bg-ink-900/60 backdrop-blur-sm;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-ink-700 bg-ink-800 px-3 py-1.5 text-sm font-medium text-ink-100 transition hover:bg-ink-700 hover:border-ink-600 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply border-emerald-500/40 bg-emerald-500/15 text-emerald-200 hover:bg-emerald-500/25 hover:border-emerald-400/60;
+  }
+  .btn-danger {
+    @apply border-rose-500/40 bg-rose-500/10 text-rose-200 hover:bg-rose-500/20 hover:border-rose-400/60;
+  }
+  .btn-ghost {
+    @apply border-transparent bg-transparent text-ink-300 hover:bg-ink-800 hover:text-ink-100;
+  }
+  .input {
+    @apply w-full rounded-md border border-ink-700 bg-ink-900 px-3 py-1.5 text-sm text-ink-100 placeholder:text-ink-500 focus:outline-none focus:border-emerald-500/60 focus:ring-2 focus:ring-emerald-500/20;
+  }
+  .label {
+    @apply text-[11px] uppercase tracking-wider text-ink-400 font-semibold;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium;
+  }
+  .status-dot {
+    @apply h-2 w-2 rounded-full;
+  }
+}
