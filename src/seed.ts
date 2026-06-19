@@ -83,7 +83,7 @@ export const seedWeeks: WeekTheme[] = [
   },
   {
     weekNumber: 3,
-    title: 'Twig & Fin Proof of Concept',
+    title: 'Pilot Client Proof of Concept',
     theme: 'Produce a measurable case study.',
     goal: 'Working prototype + before/after metrics + first case study draft.',
     deliverables: [
@@ -128,7 +128,7 @@ export const seedTasks: SprintTask[] = [
     'Merge competitor + tool research into a single deliverable.'),
 
   t('w1-wed-a', 1, W1[2], 'Wed', '13:00', '14:30', 'a',
-    'Map Twig & Fin workflows',
+    'Map Pilot Client workflows',
     'Document every founder touch in the operation.'),
   t('w1-wed-b', 1, W1[2], 'Wed', '13:00', '14:30', 'b',
     'Interview founder; gather pain points',
@@ -196,7 +196,7 @@ export const seedTasks: SprintTask[] = [
     'Complete website, forms, scheduling, CRM integration',
     'Contact form → CRM. Calendly or equivalent for discovery booking.'),
 
-  // --- Week 3: Twig & Fin Proof of Concept ---
+  // --- Week 3: Pilot Client Proof of Concept ---
   t('w3-mon-a', 3, W3[0], 'Mon', '13:00', '14:30', 'a',
     'Analyze customer service data',
     'Email corpus, support tickets. Categorize.'),
@@ -219,7 +219,7 @@ export const seedTasks: SprintTask[] = [
 
   t('w3-wed-both', 3, W3[2], 'Wed', '13:00', '16:00', 'both',
     'Build first customer service prototype',
-    'Working version against real Twig & Fin data.'),
+    'Working version against real Pilot Client data.'),
 
   t('w3-thu-a', 3, W3[3], 'Thu', '13:00', '14:30', 'a',
     'Test email classification workflows',
@@ -282,7 +282,7 @@ export const seedMilestones: Milestone[] = [
   m('ms-w2', 2, 'Week 2 Infrastructure closed',
     'Website live, MSA + SOW signed-ready, CRM operational, SOPs documented, onboarding ready.',
     W2[4]),
-  m('ms-w2-data', 2, 'Twig & Fin data access secured',
+  m('ms-w2-data', 2, 'Pilot Client data access secured',
     'Critical dependency: email corpus + Shopify exports in hand before Week 3 starts. If not, Week 3 stalls.',
     W2[4]),
   m('ms-w3', 3, 'Week 3 POC closed',
