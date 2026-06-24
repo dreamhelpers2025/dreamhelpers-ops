@@ -1,20 +1,37 @@
-# Founder Liberation — Business Model v0.2
+# Dream Helpers — Business Model v0.3
 
 **Status:** Draft for Mon 6/22 working session
 **Owner:** Both founders
-**Purpose:** First-pass alignment on what we sell, to whom, for how much, and how it actually gets delivered given the split between AI-as-workhorse and human-as-interface
+**Purpose:** Define what Dream Helpers sells, to whom, for how much, and how it actually gets delivered given (a) the split between AI-as-workhorse and human-as-interface and (b) the 2026 reality that bundled incumbent AI (Shopify Sidekick, Claude for Small Business, HubSpot Breeze) is rapidly absorbing the bottom of the market.
 
-**Changes from v0.1:** Sharpened the division of labor in §0 and §7. Humans do not perform substantive review of Claude's analysis (they would have to be domain experts to do so usefully). Humans run the client interface, sanity-check the output, and close. Added §11 — Quality control protocol — to cover the gap that creates.
+## Changelog from v0.2
+
+v0.3 is a substantive rewrite after a 9-agent adversarial validation pass. Every change below is sourced to the findings in [05-validation-workflow-findings.md](05-validation-workflow-findings.md).
+
+- **§1 ICP:** Independent veterinary clinics are now the primary beachhead. Shopify $1M–$3M is a parallel test, not the primary segment. Tier 2 law dropped entirely. Dental and CPA deferred to wave 2.
+- **§2 Positioning:** "Founder Liberation" is retired as external category language (SEO is owned by DEI/identity coaches; not a category buyers search for). Stays as internal codename. External: "Practice Hours Audit" / "Founder Hours Audit" — buyer-vernacular and search-aligned.
+- **§3 Pricing:** Implementation floor raised to $4,500 (was $2,500 — below credible market floor). Managed Lite raised to $750 with hard 1.5-hr cap (was $400 — unsustainable at typical retainer creep). Audit held at $750 but **explicitly classified as customer acquisition cost** with full credit toward Implementation.
+- **§5 Pricing hypotheses:** Conversion assumptions halved or more. 30% discovery→audit reduced to 15% (cold, no proof). 40% audit→implementation reduced to 25%. "$15K booked by Day 90" is internally inconsistent — replaced with **$8K cash collected by Day 90**.
+- **§7 Delivery:** Capacity model added. Max concurrent Implementations per founder explicitly capped.
+- **§8 What we won't sell:** Added — anything Shopify Sidekick or Claude for Small Business natively delivers; any work for law firms; Implementation work that could be done in <8 hours in Make AI Agents.
+- **§9 90-day target:** Cut to $8K cash collected, 3 audits, 1 Implementation, 1 Managed Lite. Was $15K — arithmetically inconsistent with stated unit milestones.
+- **§11 QC protocol:** Split into **Tier A (smell, ~20 min)** for narrative and **Tier B (independent re-derivation, 60–90 min, mandatory)** for any numerical claim. Driven by 2025–2026 LLM hallucination benchmarks on finance-domain numbers (15–52% error rates).
+- **§11 Legal:** SOW disclosure language rewritten to be defensible. Tech E&O insurance required before first paid Implementation. Per-engagement liability cap (= fees paid) mandatory in every SOW.
+- **§12 NEW — Window-state indicators:** Three dashboard signals that tell us when the Shopify wedge is closing fast enough to pivot.
+- **§13 NEW — Competitor reality:** Named direct competitors v0.2 wrongly said didn't exist.
 
 ---
 
 ## 0. Operating principle (read this first)
 
-The model is shaped by a sharp division of labor between the AI workhorse and the human founders. Pretending humans review Claude's analysis substantively leads to overpromising; pretending Claude can run the client relationship leads to under-delivering. We do neither.
+The model is shaped by two structural facts:
+
+1. **Sharp division of labor.** Claude (AI workhorse) produces. Humans (founders) interface and close. Substantive review of analysis is not the human's job — see §11 for how we close the QC gap that creates.
+2. **Subsidized incumbent AI is shipping our pitch.** Shopify Sidekick (free on Basic+, generates 12K custom apps/quarter), Claude for Small Business ($20/mo with QuickBooks/HubSpot/Workspace connectors), HubSpot Breeze ($0.50/resolution), Intuit Assist (free in QBO) are all variants of "install an AI operating system on top of existing tools." We do not pretend they don't exist. We position **on top of them**, doing the cross-system integration and configuration they cannot deliver.
 
 ### What Claude owns (substantive)
 
-- Designing the discovery questions, the audit framework, and the data taxonomy
+- Designing the discovery questions, the audit framework, the data taxonomy
 - Reading all client data (emails, tickets, exports, transcripts) and producing structured analyses
 - Writing every deliverable: audit decks, proposals, SOWs, reports, training docs
 - Architecting every implementation: tool selection, workflow design, integration map
@@ -24,84 +41,126 @@ The model is shaped by a sharp division of labor between the AI workhorse and th
 
 ### What humans own (interface)
 
-- Running every external conversation: discovery calls, walkthroughs, handoff calls, monthly check-ins
-- Trust and relationship — the thing that gets a client to share their messy real data instead of a sanitized version
+- Running every external conversation: discovery, walkthrough, handoff, monthly check-in
+- Trust and relationship — the thing that gets the client to share messy real data
 - Real-time judgment when a client says something the brief didn't anticipate
 - Closing the sale — conviction cannot be faked or outsourced
 - Eyes and ears the AI doesn't have: tone, hesitation, what they didn't say
-- Sanity-checking deliverables before they ship (see §11) — not substantive review, but trace + match + smell-test
+- Sanity-checking deliverables per §11 (split into Tier A smell and Tier B independent re-derivation)
 
-### What Claude is genuinely weak at (and we don't sell around)
+### What Claude is genuinely weak at
 
-- Real-time customer interaction without a host platform around it
+- Real-time customer interaction without a host platform
 - Relationship-bearing roles
-- Anything requiring a human signature, phone call, or physical presence
-- Owning a long-running stateful client relationship without human orchestration
+- Multi-day SOW negotiation with partial, asynchronous updates (assigns to humans, not Claude)
+- Anything requiring a signature, phone call, or physical presence
+- Reliably accurate numerical claims (hallucination rates 15–52% on finance-domain benchmarks — drives §11 Tier B QC)
 
 ### Implication for service shape
 
-Every service we sell is one of:
-
-1. A **one-shot deliverable** (Audit)
-2. A **system the client runs without us in the loop** (Implementation)
-3. A **recurring cycle on a fixed cadence** (Managed)
-
-We do **not** sell "always-on AI agents." We sell systems and cycles, presented and closed by humans.
+Every service is one of: a one-shot deliverable (Audit), a system the client runs without us (Implementation), or a recurring fixed-cadence cycle (Managed). We don't sell "always-on AI agents." We sell systems and cycles, presented and closed by humans.
 
 ---
 
 ## 1. Ideal Client Profile
 
-### Tier 1 (highest fit, fastest close)
+### Beachhead — Independent veterinary clinics (primary)
 
-- Shopify store, $500K–$5M annual revenue
-- 1–5 employees
-- Founder is personally handling customer service, order issues, or weekly reporting
-- Stack already includes Shopify + Gmail/Outlook + (optionally) one help desk
-- US-based, founder values their time over per-hour cost
+**Why this is the beachhead.** Discovery validated four structural advantages:
 
-### Tier 2 (good fit, slower close)
+1. **Not HIPAA-covered.** Veterinary records are not protected health information. Our "install AI on top of your existing tools" pitch works without a BAA dance.
+2. **Acute documented pain.** >60% of vets report high burnout (AVMA/Merck 2024). Practice managers fight staff churn weekly.
+3. **Urgent buying trigger.** PE consolidation is active — every $10K of EBITDA improvement = $50–70K of enterprise value at exit. Owners now quote these multiples unprompted.
+4. **Concentrated distribution.** VMG (1,600+ independent practices in 50+ peer groups) + IVPA give us ONE association layer to reach the entire ICP. The buyer (practice manager via VHMA) is reachable through one warm intro.
 
-- Solo or 2-person professional service businesses with recurring clients
-  - Veterinary clinics
-  - Dental practices
-  - Boutique law firms
-  - Accounting practices
-  - Boutique consultancies
-- Founder is doing scheduling, intake, follow-up, billing reminders, or reporting personally
-- Stack: Google Workspace + practice management software + (optionally) phone system
+**Sweet spot:**
+- Independent companion-animal clinic, 2–7 staff, owner-operator
+- Owner age 45–62, planning sale to PE/VSO in 3–5 years
+- Already uses modern cloud PIMS (ezyVet, Shepherd, AVImark Cloud)
+- Practice manager exists as a distinct role
+- Located in a market with active PE consolidators nearby
 
-### Disqualifiers (we say no to these)
+**Real buyer:** the practice manager / office manager. Not the doctor. All copy, decks, and pricing target this person.
+
+**Acquisition difficulty:** medium. Reachable through VMG/IVPA + Veterinary Practice Owners Advice Line (open FB group).
+
+### Parallel test — Shopify $1M–$3M founder-run brands (secondary)
+
+**Why narrowed from v0.2's $500K–$5M:** below $1M founders are in DIY mode and won't buy; above $3M they compare to fractional COOs at $5K/mo. The middle is the actual ICP.
+
+**Why "test" not "beachhead":** Shopify Sidekick + Sidekick custom apps shipped Winter '26 and now natively absorb ~90% of in-store automation. Our wedge here is shrinking quarterly. We run this segment to learn whether cross-system orchestration ABOVE Sidekick is a defensible sale.
+
+**Sweet spot:**
+- Shopify (standard, not Plus), $1M–$3M ARR, 1–5 employees
+- Founder is the buyer AND the operator
+- Already pays for Klaviyo + Gorgias/Help Scout + a review app + an inventory tool
+- Has a VA at $800–$1,500/mo full-time (we augment, not replace)
+- Recently went through a system change (replatform, ESP switch, 3PL change)
+
+**Acquisition difficulty:** hard. Test channel is eComFuel forum + Live event ($199/mo + ticket). First-touch: weekly public Loom teardowns of $1–3M stores, tag the founder.
+
+### Wave 2 (deferred — re-evaluate Day 90)
+
+- **Dental practices** (1–7 staff). Real opportunity, but HIPAA BAA chokepoint requires pre-vetted vendor stack. Dental we ship after we have a BAA-ready vendor list and at least one healthcare-grade compliance review.
+- **CPA / accounting firms** (1–10 staff). Real opportunity, but two buying windows per year (May, November). $750 audit reads as low-status; need a $1,500 SKU for this segment. Wait for the next buying window after we have 3 case studies.
+
+### Drop entirely
+
+- **Law firms.** ABA Formal Opinion 512 + state-bar consensus that "sending privileged work product to managed AI vendors is incompatible with Rule 1.6" makes managed services structurally unsellable without SOC 2 Type 2 + zero-data-retention contracts. 6–12 month compliance lift. Revisit no earlier than v0.5.
+
+### Disqualifiers (apply to every segment)
 
 - Pre-revenue
-- Enterprise (procurement cycles kill our economics)
-- No existing digital workflow — we automate what exists, we don't digitize from paper
-- Founder cannot make a buying decision in one or two calls
-- Regulated workflows requiring per-output legal/medical sign-off (HIPAA touch, securities advice, etc.)
+- Sub-$500K revenue (vet or Shopify)
+- Pre-Plus Shopify enterprise (procurement kills us)
+- DSO / VSO / PE-platform owned (buying power is at HQ, not the practice)
+- Founder cannot make a buying decision in 1–2 calls
+- Wants headless / Hydrogen / checkout extensibility (out of scope; requires Plus partner credentials)
+- Already paying Claude for Small Business / Sidekick power user / Make AI Agents heavy user with no specific complaint we can name
 
 ---
 
-## 2. Positioning statement
+## 2. Positioning
 
-> **Dream Helpers helps founders of small ecommerce and service businesses reclaim 10–20 hours per month by installing AI-powered operating systems on top of their existing tools — without making them switch software or learn anything new.**
+### What we call ourselves externally
 
-Earnings phrases the founder actually feels:
-- *reclaim hours* (the outcome)
-- *on top of your existing tools* (zero switching cost)
-- *no learning required* (they're not signing up for an AI project, they're getting hours back)
+**Company:** Dream Helpers.
+
+**Services (vet):** Practice Hours Audit, Practice Hours Implementation, Practice Hours Managed.
+
+**Services (Shopify):** Founder Hours Audit, Founder Hours Implementation, Founder Hours Managed.
+
+**Internal codename for the whole product line:** Founder Liberation OS. Stays internal — does not appear in client-facing material.
+
+### Why the rename
+
+"Founder Liberation" Google searches return DEI / executive coaching firms (Liberation Labs, Liberation Leadership Coaching). It is not a category buyers in our ICP search for. They search for "veterinary practice automation," "Shopify automation," "fractional ops," "AI automation agency." We must speak their search language.
+
+### Positioning statement (vet)
+
+> Dream Helpers gives independent veterinary practice managers back 10–20 hours per month by installing AI-powered operating systems on top of their existing PIMS and tools — without making them switch software or learn anything new.
+
+### Positioning statement (Shopify)
+
+> Dream Helpers helps founder-run Shopify brands cut 10–20 hours per month from their personal calendar by connecting the cross-system work Sidekick and Claude for Small Business can't reach — your VA, your inbox, your Klaviyo, your 3PL.
+
+Note the Shopify version **explicitly names the incumbent AI products**. This is the only honest play. Founders already know about Sidekick; pretending we compete with it is a lost objection. We position next to it.
 
 ---
 
 ## 3. Service offerings
 
-### 3.1 Founder Liberation Audit — **$750 flat**
+### 3.1 Practice Hours Audit / Founder Hours Audit — **$750 flat (credited toward Implementation)**
 
-**Promise:** in 5 business days, deliver a documented map of where the founder's time is going, what can be automated, and what the ROI would be on each opportunity, ranked.
+**Honest framing:** this is customer acquisition cost, not a profit product. We charge $750 so that buyers self-qualify (free audits attract tire-kickers), but we credit 100% of the audit fee toward Implementation if they buy within 30 days. Internal gross margin is ~7–15%, not 80%.
+
+**Promise:** in 5 business days, deliver a documented map of where the founder's / practice manager's time is going, what can be automated, and what the ROI would be on each opportunity — ranked.
 
 **Deliverables (one PDF + one shared sheet):**
-- Time-use audit — categorized hours/month per workflow
-- Bottleneck map — which 3–5 workflows leak the most time
-- AI Opportunity Matrix — each opportunity scored on feasibility × hours saved × revenue protected
+- Time-use audit
+- Bottleneck map
+- AI Opportunity Matrix (each opportunity scored on feasibility × hours saved × revenue protected)
+- **Incumbent AI gap analysis** — what Sidekick / Claude for Small Business / Intuit Assist already does for them today, and what they're paying for that they don't need to. New requirement in v0.3.
 - Recommended implementation sequence
 - ROI estimate per recommendation
 
@@ -109,147 +168,135 @@ Earnings phrases the founder actually feels:
 
 | Day | Owner | Action |
 |---|---|---|
-| 0 | Human | 30-min discovery call |
-| 1 | Client | Uploads 30 days of email, ticket, calendar, tool exports to a shared folder |
+| 0 | Human | 30-min discovery call (free) |
+| 1 | Client | Uploads 30 days of email, ticket, calendar, tool exports to shared folder |
 | 2–4 | Claude | Processes data, generates draft sections |
-| 4 | Human | Reviews, revises, signs |
-| 5 | Human | 45-min walkthrough call + implementation proposal handed over |
+| 4 | Human | Tier A + Tier B QC per §11 |
+| 5 | Human | 45-min walkthrough call + Implementation proposal handed over |
 
-**Why $750:** below the $1K credit-card friction line, above hobby pricing. Frames us as professional but not enterprise. Easy yes for a founder feeling the pain.
+### 3.2 Practice Hours / Founder Hours Implementation — **$4,500 / $8,000 / $12,000 fixed-scope**
 
-**Margin:** at 4–6 hours of human time per audit, gross margin > 80% even at premium founder hourly rates.
+**Why three tiers, not a range:** the v0.2 $2,500–$6,000 range is below the credible SMB market floor of $5K and reads as inexperienced. The three tiers map onto the three depth-levels we'll actually deliver.
 
----
+| Tier | Price | Scope | Typical duration |
+|---|---|---|---|
+| **Starter** | $4,500 | One workflow (e.g. customer service triage, appointment reminders, inventory routing) + dashboard + training video | 3–4 weeks |
+| **Standard** | $8,000 | 2–3 workflows + KB + cross-system dashboard + handoff training | 4–6 weeks |
+| **Comprehensive** | $12,000 | 4 workflows + integrations across 3+ tools + full ops dashboard + 30-day post-launch tuning | 5–7 weeks |
 
-### 3.2 Founder Liberation Implementation — **$2,500–$6,000 fixed-scope**
+**Hard constraints:**
 
-**Promise:** in 3–5 weeks, deploy 2–4 automations from the audit's top opportunities, running on the client's existing tools without us in the loop.
+- Every Implementation must run on tools the client already pays for, or on free tiers of Make / n8n. No new monthly costs above $50/mo without explicit written approval.
+- Every Implementation must include at least one capability that Sidekick / Claude for Small Business / Make AI Agents cannot natively deliver. Forced check before pricing — if rebuilding the recommendation in Make AI Agents takes <8 hours, drop scope or drop the deal.
+- We will not bid above $12K in a single SOW until we have 3 finished case studies.
+- Payment terms: **50% on signature, 50% on UAT completion.** Non-negotiable.
 
-**Typical scopes:**
+**Concurrent capacity cap:** maximum 1 active Implementation per founder per calendar week. Sales calendar takes priority — no new Implementation starts in a week the closing founder has >3 sales calls scheduled.
 
-| Scope | Anchored at | What it includes |
-|---|---|---|
-| Single workflow (e.g. email triage) | $2,500 | One classifier + one routing flow + one dashboard tile |
-| Customer service triage + draft replies | $4,000 | Classifier + KB + draft generator wired into Gorgias/Help Scout/Gmail |
-| Reporting + monitoring stack | $4,500 | Weekly Shopify performance, customer cohort, support metrics dashboards |
-| Multi-workflow build | $6,000 | 3–4 small automations + one dashboard + one knowledge base |
+### 3.3 Practice Hours / Founder Hours Managed — **$750 / $1,200 / $2,000 per month**
 
-**Delivery cadence:**
+| Tier | Price | What's in it | Hour cap |
+|---|---|---|---|
+| **Lite** | $750/mo | Monthly health report + tweaks | 1.5 hrs/mo (overflow billed at $150/hr) |
+| **Standard** | $1,200/mo | Lite + 1 small new automation per quarter + monthly 30-min call | 4 hrs/mo |
+| **Pro** | $2,000/mo | Standard + quarterly deep retro + Slack support (only once N>3 Managed clients have run for 90 days) | 8 hrs/mo |
 
-| Week | Owner | Action |
-|---|---|---|
-| 1 | Both | Design + access setup |
-| 2–3 | Claude (build) + human (review) | Workflows built in Make / Zapier / n8n / Claude Code; dashboards in Vite + React |
-| 4 | Both | Client UAT, fixes, training video recorded |
-| 5 | Human | Handoff call + 30-day check-in scheduled |
+**Why the floor moved from $400 to $750:** at $400/mo and any realistic retainer creep (1.8–2.4× within 6 months per Parakeeto agency benchmarks), the margin collapses to negative. $750 with an enforceable 1.5-hr cap holds 50%+ GM under creep.
 
-**Hard constraint:** every implementation must run on tools the client already pays for, or on free tiers of Zapier/Make/n8n. We do not introduce new monthly costs above $50/mo without explicit written approval. This is the difference between "we help you" and "we lock you in."
-
-**Pricing ceiling:** we will not bid above $6K in a single SOW until we have 3 finished case studies. Bigger work gets phased.
-
----
-
-### 3.3 Founder Liberation Managed — **$400 / $800 / $1,500 per month**
-
-**Promise:** monthly cycle of monitoring, tuning, and one new automation per quarter.
-
-| Tier | Price | What's in it |
-|---|---|---|
-| **Lite** | $400/mo | Monthly health report + 1 hr of tweaks. Almost-pure margin. Retention play. |
-| **Standard** | $800/mo | Lite + 1 small new automation per quarter + Slack support |
-| **Pro** | $1,500/mo | Standard + monthly strategy call + quarterly deep retro |
-
-**Delivery cadence:**
-- Claude generates the monthly health report (automation success rates, time saved, anomalies, new bottlenecks)
-- Human sanity-checks per §11, presents to client
-- Tweaks batched into one monthly maintenance window per client
-
-**Why tiered:** Lite is the retention default. Standard pulls willingness-to-pay. Pro qualifies the rare client who actually wants ongoing strategy work.
+**Capacity model:** maximum 6 Lite-equivalents per founder. Standard counts as 1.5×, Pro as 3×. When capacity hits, close Managed Services to new Implementation clients until headcount or templates change the math.
 
 ---
 
 ## 4. Outcomes we sell (and measure)
 
-For every engagement, we instrument and report these four:
+For every engagement we instrument and report these four:
 
-1. **Founder hours reclaimed per month** — target 10–20
+1. **Founder / practice manager hours reclaimed per month** — target 10–20
 2. **Customer-facing response time** — target −50% on first response
-3. **Founder context switches per day** — proxy via notification volume; target −40%
-4. **Revenue protected** — orders saved from cancellation, leads not lost; target 2–5× project cost annually
+3. **Founder / manager context switches per day** — proxy via notification volume; target −40%
+4. **Revenue protected** — orders saved from cancellation, appointments not missed, leads not lost; target 2–5× project cost annually
 
-These metrics appear in every audit, every monthly report, and every case study. They are the only outcome language we use externally.
+These metrics appear in every audit, monthly report, and case study. They are the only outcome language we use externally.
 
 ---
 
-## 5. Pricing hypotheses (what we're betting on)
+## 5. Pricing hypotheses (corrected)
 
 | Hypothesis | Why it matters | Falsification trigger |
 |---|---|---|
-| $750 audit converts at ≥ 30% from discovery call | Volume play funds everything else | < 20% conversion after 10 calls |
-| ≥ 40% of audit clients buy an Implementation within 30 days | Audit is the wedge, not the product | < 25% after 5 audits delivered |
-| Average Implementation lands at $3,500 | Anchors unit economics | < $2,500 average after 5 sales |
-| ≥ 50% of Implementation clients take Managed Lite | Recurring revenue is the moat | < 30% after 5 implementations |
-| Full-cycle client (audit → impl → managed) takes < 25 human-hours over 90 days | Determines team capacity | > 40 hours after first case study |
+| $750 audit converts at ≥ **15%** from discovery call (was 30%) | Cold-outbound benchmarks 1–3% reply, 10–20% close on unbranded sellers | < 10% after 10 calls |
+| ≥ **25%** of audit clients buy an Implementation within 30 days (was 40%) | Industry benchmark for unbranded firms is 10–35% | < 15% after 5 audits delivered |
+| Average Implementation lands at **$7,000** (was $3,500) | Tier mix anchored at $8K Standard | < $5,500 average after 5 sales |
+| ≥ **40%** of Implementation clients take Managed (was 50%) | Recurring revenue is the moat | < 25% after 5 implementations |
+| Full-cycle client (audit → impl → managed) takes < **35 hrs human time** over 90 days (was 25) | First implementations have no templates yet | > 50 hours after first case study |
+| **$8K cash collected by Day 90** (was $15K booked) | Honest accounting — booked includes Managed ACV, cash is what funds runway | < $5K cash by Day 90 |
 
-We revisit this table every two weeks. The 4-week sprint won't generate enough data; the 90-day plan will.
+We revisit this table every two weeks. Falsification triggers are kill / pivot signals, not "we'll try harder."
 
 ---
 
 ## 6. Sales mechanics
 
-- **Funnel top:** outbound LinkedIn + email to ICP. Target: 20 first-touches/week per founder = 40/week team. Conversion target: 5% to discovery call.
+- **Funnel top (vet):** warm intro to a VMG peer group + sponsored IVPA quarterly free CE webinar + targeted outreach into Veterinary Practice Owners Advice Line FB group. Target: 2 booked discovery calls per founder per week from these channels by Week 4.
+- **Funnel top (Shopify):** eComFuel forum participation (as operator-persona) + eComFuel Live ticket buy + weekly Loom teardown of public $1–3M stores tagging the founder. Target: 1 booked discovery call per founder per week from these channels by Week 4.
 - **Discovery call (30 min, free):** human runs. Output is yes/no on Audit.
-- **Audit close:** signed SOW + invoice within 48 hours of the call. Stripe link, not a payment terms negotiation.
-- **Audit → Implementation transition:** the implementation proposal is baked into the audit walkthrough deck. No separate proposal cycle.
-- **Implementation close:** scope agreed by end of walkthrough call. SOW within 24 hours.
-- **Managed close:** offered at week 4 of implementation delivery as the natural next step.
+- **Audit close:** signed SOW + Stripe invoice within 48 hours of the call.
+- **Audit → Implementation:** proposal baked into walkthrough deck. No separate proposal cycle.
+- **Implementation close:** scope agreed by end of walkthrough. SOW within 24 hours.
+- **Managed close:** offered at week 4 of Implementation delivery as the natural next step.
 
-**Things we don't do:** multi-stage proposal cycles, RFPs, procurement, "send me your pricing tier sheet" emails.
+**Things we don't do:** multi-stage proposal cycles, RFPs, procurement, "send me your pricing tier sheet" emails, paid Google Ads (CAC won't pencil), generic LinkedIn cold messaging without a teardown attached.
 
 ---
 
 ## 7. Delivery architecture — who does what
 
-Read "Humans" in this table as **interface, sanity-check, and close** — not substantive review of analysis or code. Substantive QC is covered in §11.
+Read "Humans" as **interface, sanity-check, and close** — not substantive review. Substantive QC is covered in §11.
 
-| Phase | Claude (AI workhorse) | Humans (Grant + partner) |
+| Phase | Claude | Humans |
 |---|---|---|
 | Outbound prospecting | Drafts sequences, personalizes per prospect from public sources | Sends, replies, books — relationship layer |
-| Discovery call prep | Generates question list + pre-call brief from public sources | Walk through brief together; absorb context |
+| Discovery call prep | Generates question list + pre-call brief | 10-min walkthrough together; absorb context |
 | Discovery call | — | Runs the call. Asks the questions. Reads the room. |
-| Discovery debrief | — | Fills short debrief template (see §11) |
-| Audit delivery | Reads all client data, classifies, drafts every section | Sanity-checks per §11; never substantively rewrites |
-| Audit walkthrough prep | Generates deck + speaker notes + objection cards | 10-min walkthrough together so human can talk *through* it, not *from* it |
-| Audit walkthrough | — | Runs the call. Closes the implementation when fit is right. |
-| Implementation design | Drafts architecture doc, picks tools, scopes effort | Sanity-checks tool picks against §11 (especially: did the client say they hate this tool?) |
-| Implementation build | Writes workflows, configures Make/Zapier/n8n/Claude Code, builds dashboards, writes tests | Spot-checks per §11; runs UAT with client |
-| Client check-ins during build | Generates one-pager pre-call: status, what to commit to, what to defer | Runs the call. "Let me confirm and circle back" is always a valid answer. |
-| Training material | Generates walkthrough scripts + written docs | Records the video; runs handoff call |
-| Managed monthly | Pulls metrics, drafts health report, surfaces anomalies | Sanity-checks per §11; presents to client; runs strategy calls |
+| Discovery debrief | — | Fills short debrief template (§11) |
+| Audit delivery | Reads all client data, classifies, drafts every section | §11 Tier A + Tier B QC; never substantively rewrites |
+| Audit walkthrough prep | Generates deck + speaker notes + objection cards | **60-min re-derivation of 3–5 key numbers** the day before (§11). 10-min walkthrough together. |
+| Audit walkthrough | — | Runs the call. Closes Implementation when fit is right. |
+| Implementation design | Drafts architecture doc, picks tools, scopes effort | §11 sanity-check; force-rebuild check in Make AI Agents before pricing |
+| Implementation build | Writes workflows, configures Make/Zapier/n8n/Claude Code, builds dashboards, writes tests | §11 spot-check; runs UAT with client |
+| Live client check-ins | Generates one-pager pre-call: status, what to commit to, what to defer | Runs the call. "Let me confirm and circle back" is always available. |
+| SOW negotiation, scope change, tool re-selection | Drafts | **HUMAN OWNS the decision** (Claude is documented weaker at multi-day plan adjustment) |
+| Training material | Generates walkthrough scripts + written docs | Records video; runs handoff call |
+| Managed monthly | Pulls metrics, drafts health report, surfaces anomalies | §11 sanity-check; presents to client; runs strategy calls |
 
-**Hard rule:** Claude never sends anything directly to a client. A human runs the §11 sanity check on every external artifact before it leaves. Sanity check is *not* substantive review — humans aren't pretending to redline analysis they aren't expert in. They're checking traceability, consistency with what the client said, and smell.
+**Hard rule:** Claude never sends anything directly to a client. Every external artifact runs through §11. No exceptions.
 
 ---
 
 ## 8. What we will NOT sell (guardrails)
 
-- Custom-built SaaS (Month-6+ question, not Month-1 product)
+- Custom-built SaaS — Month-6+ question, not Month-1
 - Always-on AI chatbots facing customers without a moderation layer
 - Anything touching financial transactions, medical advice, or legal advice without explicit human sign-off per output
 - Hourly billing — kills the margin model
-- "AI strategy" consulting decoupled from implementation (no shelfware reports)
-- Engagements > $6K in a single SOW until we have 3 case studies
+- "AI strategy" decoupled from implementation (no shelfware reports)
+- Engagements > $12K single SOW until 3 case studies
 - Clients with no existing digital workflow
+- **Anything Shopify Sidekick / Claude for Small Business / Intuit Assist natively deliver in their basic plan** — we are not a paid layer on top of free incumbent features
+- **Anything that could be rebuilt in Make AI Agents in < 8 hours** — that's freelancer work at $100/hr, not our scope
+- **Law firm work entirely** — until v0.5+ when compliance posture justifies
+- **Pre-revenue or sub-$500K clients** — can't afford Implementation, will tire-kick audit, won't buy Managed
 
 ---
 
-## 9. 90-day success criteria
+## 9. 90-day success criteria (recalibrated)
 
-| Milestone | By | Status check |
+| Milestone | By | Notes |
 |---|---|---|
-| Site live, pricing public, 1 case study draft, outbound running, 3+ discovery calls booked | End Week 4 (current sprint) | — |
-| 3 audits delivered, 1 implementation in flight, $5K booked revenue | Day 60 | — |
-| 5 audits delivered, 2 implementations delivered, 2 Managed Lite clients, $15K booked revenue, 2 finished case studies | Day 90 | — |
+| Site live with new positioning, pricing public, 1 vet case study draft, outbound running into VMG/IVPA + eComFuel, 3+ discovery calls booked | End Week 4 (current sprint) | — |
+| 2 audits delivered, 1 Implementation in flight, $3K cash collected | Day 60 | Lower than v0.2's Day 60 |
+| 3 audits delivered, 1 Implementation completed, 1 Managed Lite signed, **$8K cash collected**, 1 finished vet case study | Day 90 | Was $15K — that number was arithmetically inconsistent and conflated booked with cash |
+| Tier 2 (dental, CPA) re-evaluation with Day-90 evidence | Day 90 | Re-decision, not a launch |
 
 ---
 
@@ -257,53 +304,103 @@ Read "Humans" in this table as **interface, sanity-check, and close** — not su
 
 These need a human call, not an AI draft:
 
-1. **Brand voice** — earnest operator vs cheeky disruptor? Drives website copy, sequence tone, deck language. Locked at end of Week 1.
-2. **Legal entity** — LLC vs sole proprietorship? Liability question matters most for the recommendations we put in audits.
-3. **E&O insurance** — worth $400/yr now or wait until first paid contract?
-4. **Visual identity** — adopt the existing dreamhelpers.org design system as-is, or evolve it for the Founder Liberation product line?
-5. **Founder time split** — is one of you primary on sales (and the other primary on delivery), or do you both touch both? This decides who runs discovery calls and who runs handoff.
-6. **Pilot client posture** — is the pilot a paying $0 reference client, a discounted $375 client, or a full-price $750 client whose case study we get rights to? This shapes the audit pitch language for client #2 onward.
-7. **Disclosure language** — do we tell clients in the SOW that deliverables are AI-generated and human-presented, or do we treat it as "we use AI tools" boilerplate? Real liability question. See §11.
+1. **Lead vertical decision.** Doc recommends vet as beachhead, Shopify as parallel test. Founders confirm or pick a single segment.
+2. **External brand language.** Adopt "Practice Hours Audit" / "Founder Hours Audit" or pick alternatives. Lock at end of Week 1.
+3. **Legal entity.** LLC vs sole prop. The liability question matters more in v0.3 than v0.2 because §11 now requires E&O insurance.
+4. **E&O insurance.** Required before first paid Implementation per §11. ~$400–$800/yr small-business tech E&O. Decide which carrier.
+5. **Visual identity.** Use existing dreamhelpers.org system or evolve for the service line?
+6. **Founder time split.** Primary-sales / primary-delivery, or both do both? Implementation capacity cap of 1 per founder per week makes this load-bearing.
+7. **Disclosure language in SOW.** §11 proposes: "Deliverables are produced using AI tooling and reviewed by Dream Helpers for source-traceability and internal consistency. Clients are responsible for validating numerical claims against their own systems before acting on recommendations." Adopt as written, or modify?
+8. **Pilot client posture.** Free reference / discounted $375 / full-price $750 with case study rights?
+9. **Vet beachhead acquisition strategy.** Pay for VMG sponsor slot ($), buy IVPA quarterly CE webinar sponsorship ($), or approach grass-roots through Veterinary Practice Owners Advice Line FB group (free + slow)?
 
 ---
 
 ## 11. Quality control protocol
 
-Because humans are not performing substantive review of Claude's analysis, the gap that opens — "Claude is confidently wrong and nobody catches it before the client sees it" — has to be closed with a fixed pre-flight checklist applied to every external artifact. The checklist is not domain review. It is structural and behavioral.
+Because humans do not perform substantive review of Claude's analysis, the gap is closed by a structured, mandatory checklist applied to every external artifact. The checklist is not domain review. It is structural, behavioral, and **split into two tiers** based on what's being reviewed.
 
-### The pre-flight checklist (every external artifact)
+### Tier A — Smell test (~20 min)
 
-Run before any deliverable, deck, proposal, report, or email goes to the client.
+Applies to: **narrative, summaries, slide copy, written prose, recommendation explanations.**
 
-1. **Traceable.** Every number, every claim about the client's operation, every "you currently…" statement cites the source row, ticket, message, or export field. If Claude can't show you the source, the line gets cut. *Time: ~5 min for a typical audit.*
+1. **Traceable.** Every "you currently…" claim cites a source row, ticket, message, or export field. No source → cut.
+2. **Consistent with what they told us.** Cross-check against discovery debrief notes. If client said "we will not switch off Gmail" and the recommendation involves moving off Gmail, the recommendation changes or gets explicit framing.
+3. **Smell test.** Read as a presenter would. Anywhere you would not defend a line in front of the client — flag it.
 
-2. **Consistent with what they told us.** Cross-check every recommendation against the discovery debrief notes. If the client said "we will not switch off Gmail" and the recommendation involves moving off Gmail, the recommendation either changes or gets explicit "we know you said X — here's why we still raise this" framing. *Time: ~5 min.*
+### Tier B — Independent re-derivation (60–90 min, **mandatory**)
 
-3. **Smell test.** The human reads the deliverable as a presenter would. Anywhere they would not be willing to defend a line in front of the client — flag it. Common smells: numbers that feel too round, recommendations that name a tool the client never mentioned, ROI estimates that seem implausibly high. *Time: ~10 min.*
+Applies to: **every numerical claim that appears in a client-facing recommendation.** Hours saved. Dollars saved. ROI percentages. Time-to-payback. Automation percentages.
 
-Total: ~20 minutes per deliverable. Codified, not vibes.
+Driven by 2025–2026 LLM hallucination benchmarks on finance-domain numerical claims (FAITH, FINTRUST, PHANTOM benchmarks; 15–52% error rates across SOTA models on grounded financial tasks). A 20-minute smell test does not catch confidently-wrong numbers. Independent re-derivation does.
+
+**Process:**
+1. Take each numerical claim in the deliverable.
+2. Re-run the calculation **from the raw source data with a fresh prompt** (not the original analysis prompt).
+3. Compare. If the numbers don't match within tolerance — flag and rebuild.
+4. **Forbid round-number claims.** "Saves 10 hours" → either reword as "saves 8–12 hours" or rebuild the math.
 
 ### The brief / debrief loop
 
-Every external conversation is wrapped by Claude on both sides:
+Every external conversation is wrapped:
 
-- **Before:** Claude generates a one-page pre-call brief. Human and Claude do a 10-min walkthrough so the human can speak *through* the brief, not *from* it.
-- **After:** Human fills a short debrief template — what was said, what surprised, what got pushed back on, what the client agreed to. This is how Claude sees what actually happened in the room.
+- **Before:** Claude generates a one-page pre-call brief + speaker notes. **For walkthroughs and high-stakes calls, human spends 60 min the day before re-deriving the 3–5 key numerical claims** so they can defend them under client questioning without "let me check."
+- **After:** Human fills short debrief template. Captures what was said, what surprised, what got pushed back on, what client agreed to.
 
-The debrief template is itself a deliverable Claude maintains and refines as we run more calls.
+### Live-call fallback
+
+Build a private "live Claude" channel during calls — on-call human can paste a client question and get an answer in <60 seconds. Decide whether visible use is acceptable per brand (probably yes for technical questions, no for pricing/scope).
 
 ### Escalation pattern
 
-When something exceeds the checklist:
+- **Human is uncertain about a deliverable claim:** flag in working session. Claude reproduces the trace from source. If trace breaks, claim is dropped.
+- **Client pushes back live on something not in the brief:** "Good question, let me confirm and come back tomorrow." Never improvise commitment. Never argue.
+- **Client outcome misses targeted metric:** retro. Was the estimate wrong (Claude failure), the client didn't adopt (interface failure), or the system broke (build failure)? Fix accordingly.
 
-- **Human is uncertain about a deliverable claim:** flag in the working session. Claude reproduces the trace from source. If trace breaks, claim is dropped.
-- **Client pushes back live in a call on something not in the brief:** human says "good question, let me confirm and come back to you tomorrow." Never improvise a commitment. Never argue with the client live for the sake of defending a Claude output.
-- **Client outcome misses the targeted metric** (e.g. promised 10–20 hrs/month, delivered 4): trigger a retro. Was the original estimate wrong (Claude's fault, fix the estimating method)? Did the client not adopt the system (interface failure, fix the handoff)? Did the system not work as designed (build failure, fix the system)?
+### Legal / insurance protocol (new in v0.3)
 
-### Disclosure — what we tell clients
+The "humans don't substantively review" stance creates a negligent-misrepresentation exposure unless we frame it correctly in the SOW and carry insurance.
 
-This is decision #7 in §10 and needs the founders to settle it. Recommendation: standard SOW boilerplate says "Dream Helpers uses AI tooling extensively in analysis, design, and build. All deliverables are reviewed and presented by Dream Helpers staff." That's truthful, doesn't oversell human involvement, doesn't undersell our actual model, and matches the disclosure language increasingly normal in the consulting industry.
+**Three requirements before the first paid Implementation:**
+
+1. **Tech E&O / professional indemnity policy.** Confirm AI exclusion language ("silent AI") is absent. ~$400–$800/yr for small-business tech E&O.
+2. **SOW disclosure language:**
+   > "Deliverables are produced using AI tooling and reviewed by Dream Helpers for source-traceability and internal consistency. Clients are responsible for validating numerical claims against their own systems before acting on recommendations."
+3. **Per-engagement liability cap** equal to fees paid, written into every SOW.
 
 ---
 
-*Document ends. Update as the model evolves; preserve historical versions in `deliverables/archive/`.*
+## 12. Window-state indicators (new in v0.3)
+
+The market window is real but narrowing. Three dashboard signals tell us when to pivot. Tracked bi-weekly.
+
+| Indicator | Threshold | What it means |
+|---|---|---|
+| % of discovery calls where prospect mentions Sidekick / Claude for Small Business unprompted | >30% by Day 60 | The Shopify wedge is closing fast. Time to repositioning or segment pivot. |
+| Average Implementation price achieved (rolling 3 deals) | <$2,500 | The Implementation wedge is gone. Either rebuild scope upmarket or shut down the Implementation tier. |
+| % of audit recommendations that could be entirely executed in Make AI Agents or Sidekick | >60% (measured each audit) | We are doing work the buyer can self-serve. Mandatory repositioning. |
+
+Each indicator has a falsification consequence. We do not "monitor and adjust." We trigger a specific action.
+
+---
+
+## 13. Competitor reality (new in v0.3)
+
+v0.2 §04 said there were no direct AI-ops competitors. That was wrong. Direct competitors as of June 2026:
+
+| Competitor | Their offering | Our differentiation |
+|---|---|---|
+| [KariOps](https://kariops.com) | Claude-centric scoping engagement → priced projects → build sprints. Family/private business focus. | We are vet-clinic specialized + Shopify-specialized with transparent pricing. They don't publish prices. |
+| [Aperture OS](https://aperture-os.com) | Fractional Chief AI Officer, $3K–$10K/mo retainer, $500K–$20M client size. | We are 2–7× cheaper. We serve businesses too small for Aperture. |
+| [Operational Freedom](https://operational-freedom.com) | "Your business should run without you running it" — almost identical thesis with voice-agent emphasis. | We're claiming the vet + Shopify lane explicitly. They lean local services + voice. |
+| [THAILS](https://thails.com) | Shopify Plus AI & Automation Audit. | We serve sub-Plus Shopify ($1–3M ARR). They go upmarket. |
+| n8n agencies (multiple) | $5K productized "Automation Accelerator" — audit + workshop + 4 workflows. $1K–$2.5K/mo retainer. | We must include capability Make/n8n cannot deliver in every Implementation, or undercut to $1.5K. Likely undercut for vet (less n8n competition in that vertical). |
+| **Anthropic Claude Corps** | $150M, 1,000 fellows placed in nonprofits starting Oct 2026. | Adjacent. They are nonprofit-only. We are for-profit, available now, vet-specialized. Late 2027 their alumni become competition — or a hiring pipeline. |
+| **Claude for Small Business** ($20/mo) | Anthropic-shipped product with QuickBooks/HubSpot/Workspace connectors. | We position as the consultant ON TOP of CFSB. Audit measures what CFSB is failing to automate in the client's specific stack. |
+| **Shopify Sidekick** (free on Basic+) | Natural-language Flow generation; 12K custom Sidekick apps in Q1 2026. | We position on cross-system orchestration Sidekick cannot touch — vendor comms, accounting, scheduling, CRM beyond Shopify. |
+
+**Adjacent threats:** Gorgias / Richpanel direct-to-merchant AI; Build Grow Scale (CRO-focused, could expand downmarket); Upwork productized AI freelancers ($30–$150/hr fixed-price work).
+
+---
+
+*Document ends. Update as evidence accumulates; preserve historical versions in `deliverables/archive/`.*
