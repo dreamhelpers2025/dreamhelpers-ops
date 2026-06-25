@@ -1,20 +1,8 @@
-# Dream Helpers — Business Model v0.4
+# Dream Helpers — Business Model v0.3
 
 **Status:** Draft for Mon 6/22 working session
 **Owner:** Both founders
 **Purpose:** Define what Dream Helpers sells, to whom, for how much, and how it actually gets delivered given (a) the split between AI-as-workhorse and human-as-interface and (b) the 2026 reality that bundled incumbent AI (Shopify Sidekick, Claude for Small Business, HubSpot Breeze) is rapidly absorbing the bottom of the market.
-
-## Changelog from v0.3
-
-v0.4 is an additive update after a broader 5-category environmental scan. Findings in [06-broader-market-scan-findings.md](06-broader-market-scan-findings.md). The scan confirmed vet clinics as the primary beachhead (only candidate scoring ≥8 on every dimension) and surfaced one structurally similar new candidate worth slotting in as a ready-to-swap parallel test.
-
-- **§1 ICP:** Independent insurance agencies ($1M–$10M revenue, owner-operator, AMS-resident) added as a **ready-to-swap parallel test**. Same PE/aggregator roll-up dynamics as vet, same EBITDA-to-exit buying trigger, similar concentrated association distribution (Big I, Agency Nation, IIABA). Insurance scored 78/100 in the cross-category ranking vs. Shopify's 64/100.
-- **§1 / §9 Shopify hard kill criterion:** by **Day 90**, Shopify $1M–$3M must show ≥2 signed Implementations attributable to the post-Sidekick orchestration thesis. If not, drop and reallocate to insurance agencies.
-- **§9 Day 45 swap test:** if Shopify hasn't produced a single qualified discovery call by Day 45, accelerate insurance into the parallel-test slot at that point rather than waiting to Day 90.
-- **§6 Sales mechanics:** insurance agency channels added (Agency Nation, Big I local chapters, IIABA, Insurance Journal).
-- **§10 Open decisions:** insurance test binding-question added — do agency principals translate ops improvement into EBITDA-to-exit math unprompted, the way vet owners do?
-- **§13 Competitor reality:** no change.
-- **All other v0.3 content preserved** — vet beachhead, pricing structure, QC protocol, legal posture, window-state indicators are unchanged.
 
 ## Changelog from v0.2
 
@@ -110,31 +98,6 @@ Every service is one of: a one-shot deliverable (Audit), a system the client run
 - Recently went through a system change (replatform, ESP switch, 3PL change)
 
 **Acquisition difficulty:** hard. Test channel is eComFuel forum + Live event ($199/mo + ticket). First-touch: weekly public Loom teardowns of $1–3M stores, tag the founder.
-
-**Hard kill criterion (new in v0.4):** by **Day 90**, this segment must produce ≥2 signed Implementations attributable to the post-Sidekick orchestration thesis. If not, drop and reallocate the slot to insurance agencies (see below).
-
-### Ready-to-swap parallel test — Independent insurance agencies (new in v0.4)
-
-**Why we added this.** The broader market scan ranked this segment second overall (78/100) on the same scoring dimensions used to validate vet. It mirrors vet's structural advantages closely enough that learnings transfer rather than overlap, but the segments are non-overlapping in client base.
-
-1. **Same PE/aggregator roll-up dynamics.** Active insurance-agency roll-ups (BroadStreet, World, Inszone, Hub, etc.) create the same dollar-translated EBITDA-to-exit buying trigger as vet. Owners 50+ planning a sale think in multiples.
-2. **Concentrated association distribution.** Big I (Independent Insurance Agents & Brokers of America) + Agency Nation Slack + IIABA local chapters give us one association layer to reach the entire ICP — the same VMG/IVPA pattern.
-3. **Workable regulation.** State DOI rules govern licensing, not data handling. Not HIPAA-grade. The surrounding ops layer (renewals, x-dates, CSR follow-up, certificate requests) is wide open.
-4. **Proven WTP for software.** Agencies already pay $500–$2K/mo per app (Applied Epic, AMS360, EZLynx). $750 audit + $1.2K/mo Managed Standard sits in their existing budget envelope.
-5. **No incumbent AI Sidekick-equivalent inside the AMS yet.** Different from Shopify, where Sidekick is eating the wedge.
-
-**Sweet spot:**
-- Independent P&C or commercial insurance agency, $1M–$10M revenue
-- Owner-operator, 50+ years old, planning sale in 3–5 years
-- AMS-resident (Applied Epic, AMS360, EZLynx, HawkSoft, NowCerts, Veruna)
-- Operations manager exists as a distinct role
-- Carriers represented: 3+ standard market carriers + at least one MGA
-
-**Real buyer:** the agency principal — or the operations manager if one exists. Same "non-clinical operator who fears for their job amid staffing churn" pattern as vet.
-
-**Acquisition difficulty:** medium. Test channels: Agency Nation Slack, Big I local-chapter warm intros, ASCEND Insurance Conference (May 2026 Vegas was the recent flagship), Insurance Journal.
-
-**Test status (v0.4):** Active validation. If Shopify doesn't produce a single qualified discovery call by **Day 45**, accelerate insurance into Shopify's parallel-test slot at that point. Binding test for insurance: do agency principals translate ops improvement into EBITDA-to-exit math unprompted, the way vet owners do? If yes → real candidate. If no → structurally pretty mirage.
 
 ### Wave 2 (deferred — re-evaluate Day 90)
 
@@ -276,7 +239,6 @@ We revisit this table every two weeks. Falsification triggers are kill / pivot s
 
 - **Funnel top (vet):** warm intro to a VMG peer group + sponsored IVPA quarterly free CE webinar + targeted outreach into Veterinary Practice Owners Advice Line FB group. Target: 2 booked discovery calls per founder per week from these channels by Week 4.
 - **Funnel top (Shopify):** eComFuel forum participation (as operator-persona) + eComFuel Live ticket buy + weekly Loom teardown of public $1–3M stores tagging the founder. Target: 1 booked discovery call per founder per week from these channels by Week 4.
-- **Funnel top (insurance, ready-to-swap):** Agency Nation Slack participation + Big I local-chapter warm intros + targeted LinkedIn outreach to agency principals 50+ on AMS-resident agencies. Activate this channel if Shopify produces zero qualified discovery calls by Day 45. Target: 1 booked discovery call per founder per week within 2 weeks of activation.
 - **Discovery call (30 min, free):** human runs. Output is yes/no on Audit.
 - **Audit close:** signed SOW + Stripe invoice within 48 hours of the call.
 - **Audit → Implementation:** proposal baked into walkthrough deck. No separate proposal cycle.
@@ -333,9 +295,7 @@ Read "Humans" as **interface, sanity-check, and close** — not substantive revi
 |---|---|---|
 | Site live with new positioning, pricing public, 1 vet case study draft, outbound running into VMG/IVPA + eComFuel, 3+ discovery calls booked | End Week 4 (current sprint) | — |
 | 2 audits delivered, 1 Implementation in flight, $3K cash collected | Day 60 | Lower than v0.2's Day 60 |
-| **Shopify swap test** — if 0 qualified discovery calls from Shopify by Day 45, activate insurance-agency channels and accelerate insurance into the parallel-test slot | Day 45 | New in v0.4 |
 | 3 audits delivered, 1 Implementation completed, 1 Managed Lite signed, **$8K cash collected**, 1 finished vet case study | Day 90 | Was $15K — that number was arithmetically inconsistent and conflated booked with cash |
-| **Shopify kill criterion** — if <2 signed Implementations attributable to the post-Sidekick orchestration thesis, drop Shopify and reallocate the slot to insurance agencies | Day 90 | New in v0.4. Forces a real decision instead of monitor-and-adjust |
 | Tier 2 (dental, CPA) re-evaluation with Day-90 evidence | Day 90 | Re-decision, not a launch |
 
 ---
@@ -353,8 +313,6 @@ These need a human call, not an AI draft:
 7. **Disclosure language in SOW.** §11 proposes: "Deliverables are produced using AI tooling and reviewed by Dream Helpers for source-traceability and internal consistency. Clients are responsible for validating numerical claims against their own systems before acting on recommendations." Adopt as written, or modify?
 8. **Pilot client posture.** Free reference / discounted $375 / full-price $750 with case study rights?
 9. **Vet beachhead acquisition strategy.** Pay for VMG sponsor slot ($), buy IVPA quarterly CE webinar sponsorship ($), or approach grass-roots through Veterinary Practice Owners Advice Line FB group (free + slow)?
-10. **Insurance agency parallel-test activation date.** New in v0.4. Default is Day 45 contingent on Shopify producing zero qualified discovery calls. Confirm or move earlier (Week 2 for a true 3-way parallel test).
-11. **Insurance binding test.** The scan's load-bearing assumption is that agency principals translate ops improvement into EBITDA-to-exit math unprompted, the way vet owners do. Three founder calls test this. Who runs them and when?
 
 ---
 
