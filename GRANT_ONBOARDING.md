@@ -15,29 +15,64 @@ There's also `archive/` inside `deliverables/` with the older versions (v0.2, v0
 
 You don't need everything to do everything. Read all three, install what fits how you'll work.
 
-### Required: a code editor
+### A note on Terminal vs editor (read first if you're new to this)
 
-Any of these works — pick the one you already use:
-- VS Code: https://code.visualstudio.com/
-- Cursor: https://cursor.sh
-- Anything else you like
+These get conflated, so for clarity:
+- **Terminal** is the command-line shell built into macOS. It's already installed — open via Spotlight: `Cmd+Space`, type "Terminal," Enter. It lets you run commands (`git`, `npm`, `claude`, install scripts). It is **not** a code editor.
+- **A code editor** (VS Code, Cursor, etc.) is a separate app where you read and edit files visually. You install it once and use it forever.
+- **Claude Code** is the AI assistant we install via Terminal but which then lets you work conversationally — it can read, write, and run things for you.
 
-### Required if you want to use Claude Code (highly recommended)
+You'll use all three together: Terminal to run commands, your code editor to look at files yourself when you want to, Claude Code as the AI workhorse.
 
-Claude Code is Anthropic's AI assistant that does most of the work in this project. Install:
+### Step 1 — Code editor (visual, for reading and editing files)
 
-1. Go to https://claude.com/product/claude-code or whatever the current install page is
-2. Install the desktop app for your OS (or the CLI if you prefer terminal)
-3. Sign in. **Use your own Anthropic account if you have one** — billing is separate from the GitHub account. If we want shared billing, we'll set up a Team plan later. For now your account is fine.
+Pick one. Both are free.
+
+- **VS Code (recommended for most people):** Go to https://code.visualstudio.com/ and click **Download for Mac**. The download is a `.zip` — unzip it and drag `Visual Studio Code.app` into `/Applications`. Launch from Spotlight.
+- **Cursor (VS Code with built-in AI features):** Go to https://cursor.sh and click **Download for Mac**. Same drag-into-Applications install.
+
+### Step 2 — Claude Code (the AI workhorse)
+
+Open Terminal (`Cmd+Space` → "Terminal" → Enter), then paste this and press Enter:
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+That installs Claude Code. To launch it later, type `claude` in any Terminal window from inside a project folder.
+
+If the install URL has changed, the canonical instructions live at https://docs.claude.com/claude-code/quickstart — follow whatever that page says.
+
+**Sign in.** First launch will ask you to log in. **Use your personal Anthropic account if you have one** — billing is separate from our shared GitHub. If we want shared billing later, we'll set up a Team plan. For now, your own account is fine.
 
 Important: **Claude Code conversation threads are local to each machine.** You cannot open my threads on your computer, and I can't open yours. The shared brain is the repo, not the chat history. Anything we decide that matters gets pushed to the repo so the other person can read it.
 
-### Required if you'll touch the dashboard code
+### Step 3 — Node and Git (only if you'll touch the dashboard code)
 
-Only needed if you'll modify the React app itself (most work won't need this — the dashboard is feature-complete for now). If yes:
+Most work won't need this — the dashboard is feature-complete for now. If you want to be able to run the dashboard locally:
 
-1. Node 20+ from https://nodejs.org/
-2. Git from https://git-scm.com/ (you probably have it already)
+**Git:** macOS comes with a system git. Check by running `git --version` in Terminal. If it prints a version, you're done. If macOS prompts you to install developer tools, accept the install.
+
+**Node 20+:** the easiest way on Mac is via Homebrew. If you don't have Homebrew, install it first:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Then install Node:
+
+```bash
+brew install node@20
+```
+
+Confirm:
+
+```bash
+node --version  # should print v20.x.x or higher
+npm --version
+```
+
+If you'd rather skip Homebrew, download the macOS installer from https://nodejs.org/ and double-click through it.
 
 ## Credentials you need
 
