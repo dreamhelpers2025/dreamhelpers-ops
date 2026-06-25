@@ -7,7 +7,7 @@
 ## Glossary (read once, then skim)
 
 **Strategy terms**
-- **Beachhead** — the first segment we attack with full focus. Borrowed from a military landing. Where we plant the flag.
+- **Beachhead** — the first market segment we attack with full focus, narrow enough to actually win and valuable enough to use as a base for expansion. Originates from amphibious military landings (e.g., D-Day at Normandy, 1944) where a landing force secured a strip of beach, held it under counter-attack, then pushed inland. Geoffrey Moore's *Crossing the Chasm* (1991) popularized the term in startup strategy.
 - **Parallel test** — a secondary segment we test alongside the beachhead to learn faster, without committing to it as the primary bet.
 - **Ready-to-swap** — a parallel test that activates only if a different segment fails — a backup slot, not a third active battle.
 - **Wave 2** — segments we don't pursue now but plan to revisit after the beachhead is producing.

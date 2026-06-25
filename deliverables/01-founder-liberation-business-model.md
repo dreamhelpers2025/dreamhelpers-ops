@@ -8,6 +8,7 @@
 
 **Business and money terms**
 - **ICP** (Ideal Client Profile) — the specific kind of business we are best positioned to sell to.
+- **Beachhead** — the first market segment we attack with full focus, narrow enough to actually win and valuable enough to use as a base for expansion. Originates from amphibious military landings (e.g., D-Day at Normandy, 1944), where a landing force secured a strip of beach, held it under counter-attack, then pushed inland. Geoffrey Moore's *Crossing the Chasm* (1991) popularized the term in startup strategy. In v0.4, independent vet clinics are our beachhead.
 - **ARR** (Annual Recurring Revenue) — total revenue a business makes per year from subscriptions or recurring contracts.
 - **EBITDA** (Earnings Before Interest, Taxes, Depreciation, and Amortization) — a standard measure of operating profit. PE buyers value a business as a multiple of EBITDA, so every extra $1 of EBITDA is worth ~$5–$10 at sale.
 - **PE** (Private Equity) — investment firms that buy whole businesses, improve them, and sell them at a multiple of EBITDA.

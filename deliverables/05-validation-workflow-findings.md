@@ -14,6 +14,7 @@
 
 **Business model terms (reused from the main glossary)**
 - **ICP** (Ideal Client Profile), **ARR** (Annual Recurring Revenue), **CAC** (Customer Acquisition Cost), **ROI** (Return on Investment), **GM** (Gross Margin), **ACV** (Annual Contract Value), **EBITDA** (Earnings Before Interest, Taxes, Depreciation, and Amortization), **PE** (Private Equity), **SOW** (Statement of Work), **E&O** (Errors & Omissions insurance), **HIPAA** (US patient-data law), **BAA** (Business Associate Agreement).
+- **Beachhead** — the first market segment we attack with full focus, narrow enough to actually win and valuable enough to use as a base for expansion. Originates from amphibious military landings (e.g., D-Day at Normandy, 1944) where a landing force secured a strip of beach, held it, then pushed inland. Popularized in startup strategy by Geoffrey Moore's *Crossing the Chasm* (1991).
 
 **Pricing-strategy terms**
 - **Conversion stack** — the multi-step funnel from cold lead → discovery call → audit → implementation → managed. Each stage multiplies. 30% × 40% × 50% = 6% from cold contact to managed-services client.
