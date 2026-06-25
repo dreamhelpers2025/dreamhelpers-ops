@@ -4,6 +4,45 @@
 **Owner:** Both founders
 **Purpose:** Confirm or overturn v0.3's vet+Shopify recommendation by ranking those segments against five new candidate categories. Drives the v0.3 → v0.4 update.
 
+## Glossary (read once, then skim)
+
+**Strategy terms**
+- **Beachhead** — the first segment we attack with full focus. Borrowed from a military landing. Where we plant the flag.
+- **Parallel test** — a secondary segment we test alongside the beachhead to learn faster, without committing to it as the primary bet.
+- **Ready-to-swap** — a parallel test that activates only if a different segment fails — a backup slot, not a third active battle.
+- **Wave 2** — segments we don't pursue now but plan to revisit after the beachhead is producing.
+- **Kill criterion** — a specific number that, if not hit by a specific date, triggers dropping a segment. Not "monitor and adjust" — a binary go/no-go.
+- **TL;DR** ("Too Long; Didn't Read") — quick summary.
+- **ICP** (Ideal Client Profile) — the type of business we are best positioned to sell to.
+- **WTP** (Willingness to Pay) — how much a given segment is likely to actually pay for our services, based on what they already spend on adjacent software and consultants.
+- **PE roll-up** — the pattern where Private Equity buys many small businesses in one industry and merges them. Creates urgent "should I sell?" buying triggers for the businesses being targeted.
+- **EBITDA** (Earnings Before Interest, Taxes, Depreciation, and Amortization) — the operating-profit measure PE buyers value businesses on. Every extra $1 of EBITDA is worth ~$5–$10 at sale.
+
+**Industry acronyms used in the ranking**
+- **AMS** (Agency Management System) — the main operating software an insurance agency runs on (Applied Epic, AMS360, EZLynx, etc.).
+- **PIMS** (Practice Information Management System) — the equivalent for vet clinics (ezyVet, Shepherd, AVImark).
+- **PMS** (Property/Practice Management System) — the same idea for vacation rentals (Guesty, Hostaway), dentists, etc.
+- **FSM** (Field Service Management) — software like ServiceTitan and Housecall Pro that home-services businesses run on.
+- **HIPAA** (Health Insurance Portability and Accountability Act) — US law protecting patient health data.
+- **BAA** (Business Associate Agreement) — required by HIPAA whenever a vendor touches patient data.
+- **SEC** (Securities and Exchange Commission) — US financial-markets regulator. Relevant to RIAs.
+- **RIA** (Registered Investment Advisor) — a fee-only wealth manager.
+- **AUM** (Assets Under Management) — how much client money a wealth manager looks after.
+- **NAR** (National Association of Realtors) — recent settlement compressed real-estate commissions and crushed broker margins.
+- **DOI** (Department of Insurance) — state-level insurance regulator.
+- **VMG / IVPA / VHMA** — the three main veterinary owner/manager associations (defined in main business-model glossary).
+- **Big I / IIABA** (Independent Insurance Agents & Brokers of America) — main insurance industry association.
+- **OTA** (Online Travel Agent) — Airbnb, VRBO, Booking.com, etc.
+- **VRMA** (Vacation Rental Management Association).
+
+**Product names that appear in the ranking**
+- **ServiceTitan / Avoca / Hatch / Goodcall** — the dominant FSM software and AI add-ons in home services. The reason competitive density is high there.
+- **Boulevard / Aesthetic Record / PatientNow** — vertical SaaS for med spas.
+- **Karbon / Canopy / Drake** — practice management software for CPAs.
+- **Clio / Clio Duo** — practice management software and AI add-on for lawyers.
+- **Guesty / Hostaway / OwnerRez** — vacation-rental PMS products.
+- **Commerce7 / WineDirect / Arryved** — vertical SaaS in wine and craft beer (mentioned in hospitality category).
+
 ---
 
 ## TL;DR

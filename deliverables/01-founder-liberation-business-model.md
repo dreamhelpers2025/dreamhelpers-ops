@@ -4,6 +4,93 @@
 **Owner:** Both founders
 **Purpose:** Define what Dream Helpers sells, to whom, for how much, and how it actually gets delivered given (a) the split between AI-as-workhorse and human-as-interface and (b) the 2026 reality that bundled incumbent AI (Shopify Sidekick, Claude for Small Business, HubSpot Breeze) is rapidly absorbing the bottom of the market.
 
+## Glossary (read once, then skim)
+
+**Business and money terms**
+- **ICP** (Ideal Client Profile) — the specific kind of business we are best positioned to sell to.
+- **ARR** (Annual Recurring Revenue) — total revenue a business makes per year from subscriptions or recurring contracts.
+- **EBITDA** (Earnings Before Interest, Taxes, Depreciation, and Amortization) — a standard measure of operating profit. PE buyers value a business as a multiple of EBITDA, so every extra $1 of EBITDA is worth ~$5–$10 at sale.
+- **PE** (Private Equity) — investment firms that buy whole businesses, improve them, and sell them at a multiple of EBITDA.
+- **CAC** (Customer Acquisition Cost) — how much it costs us to win one new client.
+- **ROI** (Return on Investment) — what a client gets back in dollar value compared to what they spent with us.
+- **GM** (Gross Margin) — revenue minus the direct cost of delivering it, as a percentage. A 50% GM means we keep 50¢ of every dollar before overhead.
+- **ACV** (Annual Contract Value) — the full year's revenue from a deal, even if billed monthly.
+- **DTC** (Direct-to-Consumer) — brands that sell straight to customers online instead of through retailers.
+- **TAM / SAM** — Total Addressable Market / Serviceable Addressable Market. Everyone who could theoretically buy vs. who we can actually reach.
+
+**Contracts and legal**
+- **SOW** (Statement of Work) — the contract that defines exactly what we deliver, when, and for how much.
+- **MSA** (Master Services Agreement) — the umbrella contract that governs an entire ongoing client relationship.
+- **E&O insurance** (Errors & Omissions) — professional liability insurance that covers mistakes in our deliverables.
+- **LLC** (Limited Liability Company) — a common small-business legal structure that separates personal and business liability.
+- **Sole prop** (Sole Proprietorship) — the simplest business structure; no legal separation between owner and business.
+- **BAA** (Business Associate Agreement) — a contract required by HIPAA whenever a vendor touches patient health data.
+- **HIPAA** (Health Insurance Portability and Accountability Act) — US law that protects patient health data.
+- **SOC 2 Type 2** — a rigorous security and data-handling audit standard required by many enterprise and healthcare clients.
+- **ABA Formal Opinion 512** — a 2024 American Bar Association ethics ruling that governs how lawyers can use AI on client work.
+
+**AI and software jargon**
+- **LLM** (Large Language Model) — the kind of AI that Claude, ChatGPT, and Gemini are built on.
+- **CFSB** (Claude for Small Business) — Anthropic's $20/mo AI product that connects to QuickBooks, HubSpot, and Google/Microsoft Workspace.
+- **Anthropic** — the AI company that makes Claude (also funding Claude Corps).
+- **Claude Code** — Anthropic's command-line tool for building software with AI; what we use to build for clients.
+- **Make AI Agents** — a low-code automation platform with built-in AI nodes. Direct competitor to what we'd otherwise build in Claude Code.
+- **Shopify Sidekick** — Shopify's built-in AI assistant that can generate store workflows from plain English.
+- **HubSpot Breeze** — HubSpot's AI customer agent priced at $0.50 per resolved conversation.
+- **Intuit Assist** — Intuit's AI assistant bundled free inside QuickBooks Online.
+- **QC** (Quality Control) — our internal review process before any deliverable goes to a client.
+- **UAT** (User Acceptance Testing) — the phase where the client tests a built system and signs off that it works.
+- **KB** (Knowledge Base) — a searchable collection of documents the AI or humans use to answer questions.
+- **API** (Application Programming Interface) — how software systems talk to each other.
+- **VPS** (Virtual Private Server) — a small rented cloud computer ($5–$10/mo) we can use to host workflows.
+
+**Industries we mention**
+- **Klaviyo** — email-marketing software used by most Shopify brands.
+- **Gorgias / Help Scout / Richpanel / Intercom / Zendesk** — customer-support help-desk platforms.
+- **Zapier / Make / n8n** — no-code automation platforms that connect apps together.
+- **Stripe / GoCardless** — online payment processors.
+- **VA** (Virtual Assistant) — usually overseas part-time admin help (often Filipino or LATAM), $800–$1,500/mo for full-time.
+
+**Veterinary terms**
+- **AVMA** (American Veterinary Medical Association) — the largest US vet professional body.
+- **VMG** (Veterinary Management Groups) — peer-group networks where independent vet practice owners share vendors and benchmarks. 1,600+ practices across 50+ groups.
+- **IVPA** (Independent Veterinary Practitioners Association) — a separate national association for independent vet owners.
+- **VHMA** (Veterinary Hospital Managers Association) — the professional body for vet practice managers (our buyer).
+- **PIMS** (Practice Information Management System) — the main software a vet clinic runs daily operations on (records, billing, scheduling).
+- **VSO** (Veterinary Service Organization) — a PE-backed corporate consolidator that buys multiple vet clinics.
+- **ezyVet / Shepherd / AVImark Cloud** — modern cloud-based vet PIMS products.
+
+**Dental, accounting, law terms**
+- **HHS** (US Department of Health and Human Services) — federal agency that enforces HIPAA.
+- **OCR** (HHS Office for Civil Rights) — the HIPAA enforcement arm.
+- **CDA** (California Dental Association).
+- **DSO** (Dental Service Organization) — corporate chain that owns multiple dental practices.
+- **PMS** (Practice Management System) — same idea as PIMS but for dentists, lawyers, etc.
+- **AGD** (Academy of General Dentistry).
+- **AICPA** (American Institute of Certified Public Accountants).
+- **CPA** (Certified Public Accountant).
+- **ABA** (American Bar Association) — main US lawyer professional body.
+
+**Insurance terms**
+- **AMS** (Agency Management System) — the main software an insurance agency runs daily operations on (Applied Epic, AMS360, EZLynx, HawkSoft, NowCerts, Veruna).
+- **P&C** (Property & Casualty) — the most common insurance category (auto, home, business).
+- **MGA** (Managing General Agent) — an insurance middleman with authority to underwrite on a carrier's behalf.
+- **Big I / IIABA** (Independent Insurance Agents & Brokers of America) — the main industry association. Big I is the brand; IIABA is the legal name.
+- **Agency Nation** — a Slack community for independent insurance agency owners.
+- **DOI** (Department of Insurance) — state-level insurance regulator.
+- **ASCEND Insurance Conference** — a major US insurance industry event (May 2026 was in Vegas).
+
+**Marketing and sales terms**
+- **SEO** (Search Engine Optimization) — getting content to rank on Google.
+- **RFP** (Request for Proposal) — a formal procurement document where buyers ask multiple vendors to bid.
+- **CRM** (Customer Relationship Management) — software for tracking leads and customer history (HubSpot, Salesforce, Airtable for our case).
+
+**Things that are basically brand names**
+- **Bench Accounting** — a cloud bookkeeping service that shut down in December 2024 and stranded ~11,000 DTC brands.
+- **eComFuel** — a $199/mo gated community of 7- and 8-figure Shopify founders.
+- **KariOps / Aperture OS / Operational Freedom / THAILS** — direct competitors named in §13.
+- **Claude Corps** — Anthropic's $150M fellowship placing 1,000 AI-implementation operators into nonprofits starting Oct 2026.
+
 ## Changelog from v0.3
 
 v0.4 is an additive update after a broader 5-category environmental scan. Findings in [06-broader-market-scan-findings.md](06-broader-market-scan-findings.md). The scan confirmed vet clinics as the primary beachhead (only candidate scoring ≥8 on every dimension) and surfaced one structurally similar new candidate worth slotting in as a ready-to-swap parallel test.

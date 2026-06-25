@@ -5,6 +5,26 @@
 **Purpose:** The workflows we build for clients have to live somewhere. This doc maps where to build what, what each tool costs, and where each one breaks. This is our internal build-decision cheat sheet.
 **Sources:** all pricing/feature data current as of June 2026; sources listed at bottom.
 
+## Glossary (read once, then skim)
+
+- **TL;DR** ("Too Long; Didn't Read") — quick summary.
+- **Workflow** — an automated process: "when X happens, do Y, Z, then if condition, do W."
+- **Task / Operation / Execution** — different platforms count workflow runs differently. Zapier counts every action (a 5-step Zap = 5 tasks). Make counts each module run as an operation. n8n counts an entire workflow run as one execution. Same work, very different bills.
+- **No-code** — building software through drag-and-drop visual tools instead of writing code.
+- **Self-hosted** — installing software yourself on a server you rent (e.g., a $5/mo VPS) rather than paying a SaaS subscription.
+- **VPS** (Virtual Private Server) — a small rented cloud computer ($3–$10/mo) you can use to host workflows or apps.
+- **Shopify Flow** — Shopify's built-in automation tool, free on every plan. Handles in-Shopify rules.
+- **Sidekick** — Shopify's built-in AI assistant that can write Flow workflows from plain English.
+- **Zapier** — the most popular no-code automation tool. Largest app catalog. Most expensive per action.
+- **Make.com** — Zapier's visual competitor; cheaper per action, better for branching logic.
+- **n8n** — open-source automation tool you can self-host for ~$5/mo. Cheapest per workflow run.
+- **Claude Code** — Anthropic's CLI tool for building software with AI. Our internal workhorse for anything custom.
+- **CLI** (Command Line Interface) — a text-based way to control software, as opposed to a graphical interface.
+- **SaaS** (Software as a Service) — software you pay for monthly instead of buying outright.
+- **CRM** (Customer Relationship Management) — software for tracking sales leads and customer history (HubSpot, Salesforce, etc.).
+- **SSO / SCIM** — enterprise sign-on and user-provisioning standards. Mostly only matter at large companies.
+- **SaaS bill** — the recurring monthly cost a business pays across all its software subscriptions.
+
 ---
 
 ## TL;DR — where to build what

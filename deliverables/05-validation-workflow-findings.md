@@ -4,6 +4,53 @@
 **Owner:** Both founders
 **Purpose:** What 9 independent agents found when asked to break the v0.2 business model and validate it against market reality. This doc justifies the changes in v0.3.
 
+## Glossary (read once, then skim)
+
+**About this kind of report**
+- **Adversarial review** — a structured critique where agents are explicitly told to try to break the plan, not to agree with it. Default skepticism, find what's wrong.
+- **Multi-agent workflow** — running multiple independent AI agents in parallel on different sub-questions, then synthesizing.
+- **Model confidence** (low / medium / high) — each adversarial agent's verdict on how likely the v0.2 plan is to work as written. "Low" means structural problems.
+- **TL;DR** ("Too Long; Didn't Read") — quick summary.
+
+**Business model terms (reused from the main glossary)**
+- **ICP** (Ideal Client Profile), **ARR** (Annual Recurring Revenue), **CAC** (Customer Acquisition Cost), **ROI** (Return on Investment), **GM** (Gross Margin), **ACV** (Annual Contract Value), **EBITDA** (Earnings Before Interest, Taxes, Depreciation, and Amortization), **PE** (Private Equity), **SOW** (Statement of Work), **E&O** (Errors & Omissions insurance), **HIPAA** (US patient-data law), **BAA** (Business Associate Agreement).
+
+**Pricing-strategy terms**
+- **Conversion stack** — the multi-step funnel from cold lead → discovery call → audit → implementation → managed. Each stage multiplies. 30% × 40% × 50% = 6% from cold contact to managed-services client.
+- **Falsification trigger** — a number that, if hit, tells us our hypothesis is wrong. Not "we'll try harder" — a kill or pivot signal.
+- **Retainer creep** — the documented industry pattern where fixed-fee retainers consume 1.8–2.4× the originally scoped hours within six months.
+- **WIP** (Work In Progress) — work we've done but haven't been paid for yet. A cash-flow risk.
+- **Booked vs cash** — "booked" revenue is contract value signed; "cash" is actually collected. Big difference for runway.
+
+**AI-specific terms**
+- **LLM** (Large Language Model) — the kind of AI Claude, ChatGPT, and Gemini are built on.
+- **Hallucination** — when an LLM confidently states something that isn't true. A primary failure mode, especially on numbers.
+- **FAITH / FINTRUST / PHANTOM** — academic benchmarks that measure how often LLMs misreport financial numbers. Cited error rates: 15–52% across SOTA (State of the Art) models.
+- **Silent AI** — an insurance industry term for AI-related risks that exist in a policy without being explicitly named. Many tech E&O policies are quietly adding "silent AI" exclusions.
+- **CFSB** (Claude for Small Business) — Anthropic's $20/mo AI product.
+- **Sidekick** — Shopify's built-in AI assistant.
+- **HubSpot Breeze** — HubSpot's per-resolution AI agent ($0.50 per resolved ticket).
+
+**Veterinary, dental, accounting, law jargon**
+- **VMG** (Veterinary Management Groups) — peer-group networks for independent vet practice owners.
+- **IVPA** (Independent Veterinary Practitioners Association).
+- **VHMA** (Veterinary Hospital Managers Association) — the practice-manager professional body. The buyer's home turf.
+- **AVMA** (American Veterinary Medical Association).
+- **PIMS** (Practice Information Management System) — vet-clinic operating software.
+- **DSO** (Dental Service Organization) — corporate dental chain.
+- **CPA** (Certified Public Accountant).
+- **AICPA** (American Institute of Certified Public Accountants).
+- **ABA Formal Opinion 512** — a 2024 American Bar Association ethics opinion that governs how lawyers can use AI on client work.
+- **SOC 2 Type 2** — a security-audit standard required by many enterprise/healthcare clients.
+
+**Shopify/DTC jargon**
+- **DTC** (Direct-to-Consumer) — selling straight to customers online, not through retailers.
+- **VA** (Virtual Assistant) — usually overseas part-time admin help, $800–$1,500/mo for full-time.
+- **eComFuel** — a $199/mo gated community of 7- and 8-figure Shopify founders.
+- **Bench Accounting** — a cloud bookkeeping service that shut down December 2024 and stranded ~11K DTC brands. Trauma still resonates in 2026.
+- **ESP** (Email Service Provider) — Klaviyo, Mailchimp, etc.
+- **3PL** (Third-Party Logistics) — a warehouse and shipping fulfillment partner.
+
 ---
 
 ## TL;DR — what the agents told us

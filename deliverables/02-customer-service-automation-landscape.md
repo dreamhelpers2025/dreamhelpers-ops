@@ -5,6 +5,28 @@
 **Purpose:** When a client says "we need help with customer service," we need to know which platform to recommend, when, and why. This doc is our internal cheat sheet. It is **not** a client-facing deliverable.
 **Sources:** all pricing/feature data current as of June 2026; sources listed at bottom.
 
+## Glossary (read once, then skim)
+
+- **TL;DR** ("Too Long; Didn't Read") — a quick summary at the top of a doc.
+- **Per-seat pricing** — software priced per logged-in user per month. Standard for help-desk platforms.
+- **Per-resolution pricing** — software priced per ticket the AI handles successfully. The more your AI works, the more you pay.
+- **ARR** (Annual Recurring Revenue) — total revenue per year from subscriptions.
+- **ICP** (Ideal Client Profile) — the type of business we are best positioned to sell to.
+- **KB** (Knowledge Base) — a searchable collection of articles and policies an AI or human draws on to answer questions.
+- **API** (Application Programming Interface) — how software systems talk to each other programmatically.
+- **Ticket** — a single customer support request (email, chat, form submission).
+- **Deflection** — preventing a ticket from ever reaching a billable AI resolution or a human, usually by sending the customer to a KB article or a self-service workflow first.
+- **Macros** — saved canned reply templates inside a help desk.
+- **Omnichannel** — supporting multiple channels in one inbox (email + chat + WhatsApp + social).
+- **Triage** — the upstream step of categorizing and routing tickets before reply.
+- **Gorgias** — Shopify-native help desk; best for ecommerce stores with order-status-heavy support.
+- **Richpanel** — newer Gorgias alternative with AI included in the seat price instead of charged per resolution.
+- **Intercom + Fin** — premium omnichannel chat tool; Fin is Intercom's AI agent priced per resolved conversation.
+- **Zendesk** — legacy enterprise help desk; complex pricing; the dominant platform we usually don't recommend new clients move to.
+- **Klaviyo** — ecommerce email-marketing software most Shopify brands use.
+- **Shopify** — the most common ecommerce platform for online stores.
+- **Sidecar workflow** — a custom system we build that sits beside the client's existing tool, doing work the tool can't do alone.
+
 ---
 
 ## TL;DR — when to recommend what

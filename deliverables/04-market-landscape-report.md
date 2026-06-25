@@ -4,6 +4,22 @@
 **Owner:** Both founders
 **Purpose:** Translate the customer-service and automation-stack research into business decisions — how we position, when we recommend what, and where we make money. This is the doc to re-read before any client conversation.
 
+## Glossary (read once, then skim)
+
+- **Per-seat platform** — software priced per logged-in user per month.
+- **Per-resolution AI** — AI features priced per ticket the AI handles, regardless of seats. The more the AI does, the more you pay. Range as of 2026: $0.50 (HubSpot Breeze) to $2.00 (Zendesk).
+- **Per-task tool** — automation platforms (Zapier, Make) priced per action carried out.
+- **Per-execution tool** — automation platforms (n8n, Shopify Flow) priced per whole workflow run regardless of step count.
+- **The wedge** — the specific gap in the market we sell into.
+- **Deflection** — preventing a ticket from reaching a billable AI resolution or a human, usually by routing the customer through self-service first.
+- **The audit** — our $750 paid discovery engagement (see business model §3.1).
+- **ICP** (Ideal Client Profile) — the type of business we are best positioned to sell to.
+- **Partner program** — vendor referral programs (Gorgias, Richpanel, etc.) that pay us 10–20% recurring on clients we send their way.
+- **Tailwind** — a trend that helps us. The opposite of a headwind.
+- **Sidecar workflow** — a custom system we build that sits beside the client's existing tool, doing work the tool can't do alone.
+- **Founder Liberation** — our internal product-line codename. Retired as external branding in v0.3 (see business model §2).
+- **Acronyms used here** are explained in the main business-model doc's glossary: ICP, ROI, CAC, SaaS, KB, API, GMV (Gross Merchandise Value, total dollar value of goods sold).
+
 ---
 
 ## The market in one paragraph
