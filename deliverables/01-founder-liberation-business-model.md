@@ -299,6 +299,8 @@ Note the Shopify version **explicitly names the incumbent AI products**. This is
 | 4 | Human | Tier A + Tier B QC per §11 |
 | 5 | Human | 45-min walkthrough call + Implementation proposal handed over |
 
+**The full repeatable process — including discovery questionnaire, workflow mapping methodology, pain point map template, opportunity matrix scoring rubric, audit report deck structure, and Day 5 walkthrough script — lives at [deliverables/framework/00-audit-framework-v0.1.md](framework/00-audit-framework-v0.1.md). Use it on every paid audit. Soil Detective is the worked example.**
+
 ### 3.2 Practice Hours / Founder Hours Implementation — **$4,500 / $8,000 / $12,000 fixed-scope**
 
 **Why three tiers, not a range:** the v0.2 $2,500–$6,000 range is below the credible SMB market floor of $5K and reads as inexperienced. The three tiers map onto the three depth-levels we'll actually deliver.
