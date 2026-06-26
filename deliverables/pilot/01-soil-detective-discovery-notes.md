@@ -101,8 +101,13 @@ The current way she structures client work has four projects without clear delin
 
 ### 5. Community membership management (operational chaos)
 
-- Handwritten list of "things to manage community memberships" was provided.
-- Action item from meeting: review the list, **select a phased approach for automations and deployments** — not all at once.
+- **Clarified 2026-06-25:** the "handwritten community ops list" IS the membership tier draft captured in §3 above. Each tier benefit (newsletter delivery, community gatherings, hands-on compost workshops, demonstrations, advanced workshops, priority registration invitations) is an ongoing operational task she has to deliver every season. The list is not a separate document — it is the back-side of the same artifact.
+- **The ops load per tier:**
+  - **Seed ($60/yr)** — newsletter, seasonal resources, member pricing notifications on workshops, community gathering invitations
+  - **Sprout ($180/yr)** — everything in Seed + scheduled hands-on compost building workshops (May–Oct), hands-on demonstrations (Turn & Learn Worm Parties, Brix Testing, Sourcing Materials sessions), garden/compost skill-building activities
+  - **Root ($360/yr)** — everything in Sprout + advanced workshops (Soil Biology 101, Microscope Experiences), community project participation invitations, priority registration for special events
+  - **Mycelium / Forest ($720 / $1,200/yr)** — to be defined; likely include 1:1 consultation, private soil testing, deeper curriculum
+- Action item: **phased rollout** of automation per tier, not all at once. Seed-tier automation first (lowest complexity, biggest member count); Sprout and Root automation second; Mycelium/Forest after benefits are defined.
 
 ### 6. "Ask Rosalinda" — Q&A tool
 

@@ -50,7 +50,7 @@ These cost her hours per week today. Each is a discrete workflow.
 
 | # | Pain point | Why it ranks here | Discrete? |
 |---|---|---|---|
-| **B1** | Community membership management (handwritten list of operational tasks) | Recurring weekly load. Direct hours-per-week reclaim. We do not yet have the actual list — gate dependency. | Yes |
+| **B1** | Community membership management (deliver tier-promised benefits on a recurring cadence) | Recurring weekly + seasonal load. Each tier (Seed / Sprout / Root / Mycelium / Forest) has a specific bundle of recurring deliverables: newsletter, gatherings, workshops, hands-on demonstrations, priority invitations. Direct hours-per-week reclaim AND direct member-retention impact (members who do not receive their tier benefits churn at renewal). | Yes |
 | **B2** | Tool Barn inventory + rental tracking | Currently paper-based. Demonstrable hours-saved metric. Rentals are revenue-generating, so the fix protects revenue too. | Yes |
 | **B3** | "Ask Rosalinda" Q&A bot | Reduces inbound question volume across email + Patreon + site comments. Hours saved = roughly proportional to her current Q&A burden, which we have not yet measured. | Yes |
 
@@ -91,9 +91,12 @@ A1 (payment psychology)
    │
    ├──► All paid offerings — memberships (D1 portal), Tool Barn rentals (B2), services
    │
-B1 (community membership ops) ──► requires the actual list from Rosalinda (open question #9 in discovery)
+B1 (community membership ops) ──► the list is the membership tier draft itself (resolved 2026-06-25)
    │
-   └──► partially depends on A1 — many membership ops tasks involve money flow
+   ├──► tightly couples to C1 — the video pipeline is the content engine that feeds the
+   │      newsletter, demonstrations, and workshop materials that B1 delivers
+   │
+   └──► depends on Squarespace Member Areas being configured for the five tiers
 
 C1 (video repurposing pipeline)
    │
@@ -110,9 +113,10 @@ B2 (Tool Barn) ──► largely independent. Inventory is in hand (see discover
 D2 (Recipe Builder ingredients) ──► fully independent. Smallest scope.
 ```
 
-**Three pain points are independent and ready to build:** B2, B3, D2.
-**Three depend on Rosalinda providing data or making decisions:** B1, D1, A1.
+**Four pain points are independent and ready to build:** B1, B2, B3, D2.
+**Two depend on Rosalinda providing data or making decisions:** D1, A1.
 **Two are a pipeline with two outputs:** C1 + C2.
+**B1 + C1 should integrate** — C1 produces the content, B1 delivers it tier-aware to members. Architect as one pipeline with two named components.
 
 ---
 
@@ -160,7 +164,7 @@ These are real items Rosalinda mentioned that should not be in Implementation:
 |---|---|---|---|---|---|
 | A1 — Pricing structure needed | Business design (build templates) | Indirect (unblocks $) | High | Low — internal toolkit | Yes (build once, ship as toolkit) |
 | A2 — SOW murkiness | Business design (proposal generator) | 1–2 (proposal time) | Medium (better scope = better margin) | Medium | Bundled with A1 |
-| B1 — Community ops | Time-leak ops | TBD (need list) | Low | Medium | Blocked (need list) |
+| B1 — Community ops (tier-aware delivery) | Time-leak ops | 2–5 (seasonal cadence) | Medium-high (member retention) | Medium-high | Yes — pairs naturally with C1 |
 | B2 — Tool Barn | Time-leak ops | 1–3 | Medium (more rentals booked) | **High** — concrete metrics | Yes |
 | B3 — Ask Rosalinda | Time-leak ops | 3–8 (estimate, unmeasured) | Low | **Very high** — visibly AI | Yes |
 | C1 — Video repurposing | Content backlog | Saves weeks of content prep | High (membership retention) | High — visible output | Yes (if scoped tight) |

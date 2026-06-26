@@ -1,6 +1,6 @@
 # Soil Detective — Opportunity Matrix
 
-**Status:** Scored analysis of the 9 pain points, drives the Implementation scope decision in `05-soil-detective-implementation-scope.md`.
+**Status:** Scored analysis of the 9 pain points, drives the Implementation scope decision in `05-soil-detective-implementation-scope.md`. Revised 2026-06-25 to unblock B1 and merge it with C1 into a single Member Engagement Pipeline lock.
 **Owner:** Both founders
 **Inputs:** Discovery notes (`01`), pain point map (`03`), brand spec (`02`), architectural decision (Option A — Squarespace stays as backbone, our specialty apps slot alongside).
 **Date:** 2026-06-25
@@ -33,13 +33,14 @@ Overall priority is a weighted blend:
 |---|---|---:|---:|---:|---:|---:|---:|
 | **B3** | Ask Rosalinda (Q&A bot trained on her content) | 9 | 3–8 [needs data] | $2K–$10K (membership retention) | **10** | 9 (JS widget embed) | **★ 87** |
 | **B2** | Tool Barn — inventory + rental booking | 8 | 1–3 | $1K–$5K (rentals booked) | **9** | 6 (direct Stripe + iframe, sidesteps Squarespace Commerce) | **★ 82** |
-| **C1+C2** | Video repurposing pipeline → community content + Patreon | 6 | Saves ~10 hrs/wk of content prep (huge) | $5K–$30K (Patreon + membership) | 7 | 8 (we run pipeline; outputs paste into Squarespace/Patreon) | **★ 78** |
+| **C1+B1+C2** | **Member Engagement Pipeline** — video repurposing → tier-aware delivery to members + Patreon | 7 | 12–15 combined (content prep + recurring tier-benefit delivery) | $10K–$45K (Patreon recovery + membership retention + reduced churn) | **9** | 8 (we run pipeline; Squarespace Member Areas + email handles distribution) | **★ 85** |
 | **A1+A2** | Pricing structure toolkit (rate sheets + automated proposal generator + tier benefits) | 9 | 1–2 | $5K–$20K (better margins on existing work) | 4 | 10 (pure templates + a small internal tool) | 72 |
 | **D2** | Recipe Builder — manual ingredient entry | 10 | 0 (no founder hours) | <$500 (no direct $ impact) | 2 | 9 (already in our Astro rebuild) | 56 |
-| **B1** | Community membership ops automation | TBD | TBD | TBD | Medium | 7 | **BLOCKED** — need her handwritten list |
 | **D1** | Soil Intelligence Portal (per-member soil sample results + recommendations) | 4 | 0 for her, value for members | $3K–$15K (membership justification) | 5 | 4 (member auth integration, structured data format gaps) | **Wave 2** |
 
 ★ = recommended for Implementation. Rest = pilot work, off-camera, or deferred.
+
+**Update 2026-06-25:** B1 (community membership ops) is no longer blocked. The "handwritten list" was the membership tier draft itself — each tier benefit is an ongoing operational task. B1 has been merged with C1 into a single **Member Engagement Pipeline** (third recommended lock), because the video pipeline is the content engine that feeds the tier-promised newsletters, workshop materials, and demonstration recordings that B1 delivers. Merging them sharpens the case-study story ("Dream Helpers built her entire member engagement engine") instead of producing two separate workflows that look loosely related.
 
 ---
 
@@ -111,37 +112,46 @@ Depends on her current inbound question volume across email, Patreon comments, s
 
 ---
 
-### ★ C1 + C2 — Video Repurposing Pipeline (community-content output only)
+### ★ C1 + B1 + C2 — Member Engagement Pipeline (the merged third lock)
 
-**What it is:** an automated pipeline that ingests her 2 TB of raw video, produces short-form clips + transcripts + descriptions, and publishes to two channels: the Soil Detective community membership feed and Patreon. **Locked to ONE output stream (community content). Advertising and curriculum streams are explicitly out of scope and remain on the roadmap.**
+**What it is:** the end-to-end content + delivery loop that:
+1. Ingests her 2 TB of raw video (C1)
+2. Produces short-form clips + transcripts + descriptions via Claude
+3. Routes the output to the right channel and tier (B1):
+   - Public-ish content → Squarespace blog + Patreon (recovers the 2023-dormant channel)
+   - Tier-gated content → Squarespace Member Areas, tier-aware (Seed gets newsletter snippets; Sprout gets workshop recordings; Root gets advanced material like Soil Biology 101 + Microscope Experience recordings)
+   - Workshop materials → tier-aware email + member-area access
+4. AI-personalizes member touch-points (renewal reminders, workshop priority registration, upcoming gathering invitations)
 
-**Why it scores third:** highest latent value of any single asset she owns. The Patreon channel has been dormant since 2023; reactivating it with regular content is roughly equivalent to recovering a stalled revenue stream. Also: the pipeline runs as an automation we set up once and she runs in perpetuity.
+Locked to ONE primary output stream (community content). Advertising and curriculum streams of C1 are still explicitly out of scope and remain Wave 2.
 
-**Feasibility 6/10:**
-- Significant ingestion work (2 TB needs storage strategy + format consistency check)
-- Transcription via Whisper or similar — well-trodden tech
-- Clip selection + description generation via Claude
-- Manual review gate (Rosalinda approves before publish)
-- Squarespace + Patreon publishing: either API-based or copy-paste workflow
-- The lower feasibility score reflects volume + manual review burden, not technical difficulty
+**Why it scores second highest (★ 85):** the merged pipeline tells one coherent case-study story — "we built her entire member engagement engine" — instead of two loosely-related workflows. The video pipeline alone is content-without-distribution; B1 alone is distribution-without-content. Together they are her actual membership product running on autopilot.
 
-**Hours saved estimate ~10/wk (huge but indirect):**
-- Reclaims weeks of content prep she was never going to do otherwise
-- Not "saves her 10 hours she was spending," more "unlocks 10 hours of content per week she wasn't producing"
+**Feasibility 7/10:**
+- Video ingestion + clip generation: well-trodden tech (transcription via Whisper, generation via Claude). Lower feasibility number reflects volume + manual review burden, not technical difficulty.
+- Tier-aware distribution: Squarespace Member Areas already supports tier gates; we configure them per the five-tier draft Rosalinda provided.
+- AI-personalized member comms: drafted by Claude, reviewed by her, sent via Squarespace newsletter (or an integrated tool like Mailchimp/ConvertKit if she has one).
+- Patreon publishing: API or copy-paste workflow.
 
-**Revenue impact $5K–$30K/yr:**
-- Reactivated Patreon at her existing tier prices ($5–$100/mo equivalents) with even modest member growth
-- Content engine drives membership retention (the C1 → C2 → membership → revenue chain)
-- Wide range because we cannot project membership growth without data
+**Hours saved estimate 12–15/wk combined:**
+- ~10 hrs/wk of content production she was never going to do
+- ~2–5 hrs/wk of recurring tier-benefit delivery (newsletters, workshop reminders, event invitations) she does today manually or skips
+- Some of this is reclaim, some is unlock — frame both honestly in the case study
 
-**MVP scope (4–6 weeks of build):**
-- Storage decision (Drive, S3, local) — needs Rosalinda's input
-- Transcription pipeline for first 50 videos
-- Claude-based clip + caption generator with her voice in the prompt
-- Publishing helpers (template posts for Squarespace + Patreon)
-- 4-week supervised run before declaring success
+**Revenue impact $10K–$45K/yr:**
+- Reactivated Patreon at modest tier mix
+- Membership retention from consistent tier-benefit delivery (members who don't receive promised benefits churn at renewal)
+- Membership growth from a steady visible content cadence
+- Wide range because we cannot project growth without data
 
-**Risk:** scope creep into ad + curriculum streams. Solving this requires written discipline. Curriculum specifically would re-open a months-long content design project.
+**MVP scope (5–7 weeks of build):**
+- Week 1: storage decision + tier audit + Squarespace Member Areas configuration for five tiers
+- Weeks 2–3: transcription pipeline for first 50 videos; clip + caption generator with Rosalinda's voice in the prompt
+- Week 4: tier-aware distribution wiring (which clip goes to which tier via what channel); newsletter automation per tier
+- Week 5: AI-personalized member touch-point templates (renewal, workshop priority, gathering invitation)
+- Weeks 6–7: 4-week supervised run with weekly review before declaring success
+
+**Risk:** scope creep into ad/curriculum streams of C1, OR expanding B1 into a full custom CRM. Hold the line: ONE video output stream (community), use Squarespace Member Areas as the member system (do not build our own).
 
 ---
 
@@ -167,11 +177,9 @@ Depends on her current inbound question volume across email, Patreon comments, s
 
 ---
 
-### B1 — Community Membership Ops Automation — **BLOCKED**
+### B1 — Community Membership Ops — **MERGED into the Member Engagement Pipeline above**
 
-Cannot be scored. Rosalinda mentioned a handwritten list of community-membership management tasks during discovery, but we did not capture the list itself. Resolve this open question first; then score.
-
-**Action item:** get the list from her (photograph or transcript) before next pilot working session.
+Originally scored as a standalone workflow. Resolved 2026-06-25: the "handwritten community ops list" is the membership tier draft itself, with each tier benefit (newsletter, gatherings, workshops, hands-on demonstrations, priority registration) being an ongoing operational task. Because the content engine (C1) feeds the same channels B1 distributes through, separating them produced two workflows that shared infrastructure but were named differently. **Merging them as the Member Engagement Pipeline sharpens the case study and reduces duplicated build work.**
 
 ---
 
@@ -191,23 +199,23 @@ Per-member private area where she posts soil sample results and recommendations.
 
 ## Recommended Implementation locks
 
-Based on the matrix, the 2–3 workflows for measured Implementation case-study coverage:
+Based on the revised matrix, the 3 workflows for measured Implementation case-study coverage:
 
-1. **Ask Rosalinda Q&A bot** (B3) — case study magnet, AI-visible, 3–4 weeks
+1. **Ask Rosalinda Q&A bot** (B3) — case-study magnet, AI-visible, 3–4 weeks
 2. **Tool Barn rental booking** (B2) — concrete measurable outcomes, 2–3 weeks
-3. **Video repurposing pipeline (community output only)** (C1) — biggest latent revenue unlock, 4–6 weeks, requires scope discipline
+3. **Member Engagement Pipeline** (C1 + B1) — content engine + tier-aware delivery, 5–7 weeks. Biggest latent revenue unlock + strongest member-retention story.
 
-**Total: 9–13 weeks of build calendar if done in parallel by 2 founders working 15 hrs/week each.** Aggressive but doable given Rosalinda is paying actual cost (not retail) and the project is positioned as a beta.
+**Total: 10–14 weeks of build calendar if done in parallel by 2 founders working 15 hrs/week each.** Aggressive but doable given Rosalinda is paying actual cost (not retail) and the project is positioned as a beta.
 
 **Off-camera pilot work** (ships alongside, not measured for the case study):
-- Pricing toolkit (A1 + A2) — 1 week
+- Pricing toolkit (A1 + A2) — 1 week, ships early because it unlocks her revenue immediately
 - Recipe Builder ingredients (D2) — 1–2 days
 - Brand spec applied to live Squarespace site via CSS injection — 2–3 days
-- Community membership ops (B1) once she shares the list
 
 **Wave 2 (revisit at Day 60):**
 - Soil Intelligence Portal (D1)
 - Video pipeline output streams 2 and 3 (advertising, curriculum)
+- Mycelium / Forest tier benefit design (once Rosalinda defines them)
 - Anything new that surfaces during the pilot
 
 ---
