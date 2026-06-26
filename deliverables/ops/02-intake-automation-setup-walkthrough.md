@@ -40,12 +40,28 @@ Have these ready before you sit down:
    - **Description:** `30 minutes. Free. We'll use the call to confirm your questionnaire answers and plan next steps in the audit.`
    - **Duration:** 30 min
    - **Location:** Google Meet (auto-generates a meet link per booking)
-6. Scroll to **Booking page → Questions invitees answer when booking**. The defaults include First name + Email. **Add a custom question:**
+6. Scroll to **Booking page → Questions invitees answer when booking**. The defaults include First name + Email. **Add two custom questions:**
+
+   **Question 1 — Business name (text):**
    - Question: `What's the name of your business?`
+   - Type: Single line text
    - Required: yes
+
+   **Question 2 — Segment (multiple choice):**
+   - Question: `What type of business do you run?`
+   - Type: Multiple choice (single select)
+   - Required: yes
+   - Options (one per line):
+     - `Veterinary clinic`
+     - `Insurance agency`
+     - `Shopify store (ecommerce)`
+     - `Other / something else`
+
+   This second answer drives segment-specific routing through the rest of the pipeline — different questionnaire branches, different welcome email language, different audit positioning. Make.com reads it on every booking.
+
 7. Save. You'll land on the event page. **Copy the public booking link** (top of the page) — looks like `https://calendly.com/dreamhelpers2025/founder-hours-audit-discovery-call`. **Save it — you'll use it in Step 5.**
 
-**STOP and verify:** Open the link in an incognito window. You should see the event with the "business name" question. Don't actually book. Close.
+**STOP and verify:** Open the link in an incognito window. You should see the event with both custom questions ("business name" and "type of business"). Don't actually book. Close.
 
 ---
 
@@ -69,12 +85,35 @@ Have these ready before you sit down:
    - **File uploads** (rate sheets, paper photos, etc.) → **"File upload"** block (Tally free supports it)
    - **Tier table** (H1) → 5 **"Long answer"** blocks (Seed/Sprout/Root/Mycelium/Forest), with the tier price in the label
 
-6. Add a **"Hidden field"** block at the top called `clientName` — Make will populate this from the Calendly booking via a URL parameter.
-7. (Optional, can skip for v1) **Settings → Logic** lets you add page transitions. Skip for speed.
-8. Click **Publish** in the top-right. Pick a custom slug like `dh-audit-discovery`. The public URL becomes `https://tally.so/r/dh-audit-discovery`. **Save this URL — you use it in Step 5.**
-9. Stay on Tally. Click **Integrations → Webhooks → Add webhook**. **Leave the URL field empty for now** — we fill it in Step 7. Just leave this tab open in your browser.
+6. Add **two "Hidden field" blocks at the top** — Make.com populates both from the Calendly booking via URL parameters:
+   - Hidden field 1: name `clientName`
+   - Hidden field 2: name `segment` — accepts values `vet`, `insurance`, `shopify`, `other`
 
-**STOP and verify:** Open the published form URL. Confirm every section and question shows up. Don't submit. Close.
+7. **Segment-specific questions and conditional logic.** Sections A, B, E, F, G, H are universal — they show to every prospect. Sections C and D have variants per segment. We don't build four separate forms; instead, we add segment-specific blocks alongside the universal ones and use Tally's conditional logic so each prospect sees only the variant matching their segment.
+
+   For Section C (tool stack), build all four variants as separate sub-sections of the same form:
+   - **C-vet block:** PIMS questions (which platform, etc.)
+   - **C-insurance block:** AMS questions
+   - **C-shopify block:** Sidekick / Klaviyo / VA questions
+   - **C-other block:** generic tool stack questions
+
+   For each variant block, click the lightning-bolt icon (Tally's conditional logic) → **Add condition → Show this block when** `segment` **equals** `vet` (or `insurance`, `shopify`, `other`).
+
+   Do the same for Section D (touch points) — four variant blocks each conditionally shown based on `segment`.
+
+   Result: a vet prospect sees A, B, C-vet, D-vet, E, F, G, H. A Shopify prospect sees A, B, C-shopify, D-shopify, E, F, G, H. The "Other" segment skips C-variant and D-variant entirely and goes A, B, E, F, G, H.
+
+8. (Optional, can skip for v1) **Settings → Logic** lets you add additional page transitions. Skip for speed.
+9. Click **Publish** in the top-right. Pick a custom slug like `dh-audit-discovery`. The public URL becomes `https://tally.so/r/dh-audit-discovery`. **Save this URL — you use it in Step 5.**
+10. Stay on Tally. Click **Integrations → Webhooks → Add webhook**. **Leave the URL field empty for now** — we fill it in Step 7. Just leave this tab open in your browser.
+
+**STOP and verify:** Open the published form URL with the segment URL parameter set to test each variant. Try each in an incognito window:
+- `https://tally.so/r/dh-audit-discovery?segment=vet` → confirm only C-vet and D-vet blocks show
+- `?segment=insurance` → confirm only C-insurance and D-insurance show
+- `?segment=shopify` → confirm only C-shopify and D-shopify show
+- `?segment=other` → confirm neither C-variant nor D-variant blocks show
+
+Don't submit. Close.
 
 ---
 
@@ -126,7 +165,11 @@ Have these ready before you sit down:
    - **Destination folder:** parent `Dream Helpers — Audits`
    - **New folder name:** click into the field and use Make's expression builder. The expression is: `[answer to "business name"] — Audit [today's date]`. In Make's syntax: `{{1.payload.questions_and_answers[].answer}} — Audit {{formatDate(now; "YYYY-MM-DD")}}`. (The questions_and_answers array contains all custom Calendly questions; Make's UI helps you click to the right one.)
 7. Right-click the line between the trigger and this module → **Run this module only** to test the folder copy. Pick a real Calendly booking from your test if possible, or use Make's "fake data" option.
-8. Add next module: **Gmail → Send an Email**:
+8. **Segment normalization helper.** Before the Gmail send, add a **Tools → Set multiple variables** module that converts the Calendly "type of business" answer (e.g., `Veterinary clinic`) into the lowercase segment key (`vet`) that the Tally URL parameter expects. Define variables:
+   - `segment` — use a small switch expression: if the answer contains `Vet` → `vet`; if `Insurance` → `insurance`; if `Shopify` → `shopify`; otherwise → `other`. In Make's expression builder: `{{ifContains(answer; "Vet"; "vet"; ifContains(answer; "Insurance"; "insurance"; ifContains(answer; "Shopify"; "shopify"; "other")))}}` — the exact syntax is shown in Make's helper UI.
+   - `clientName` — the business name answer from Calendly.
+
+9. Add the **Gmail → Send an Email** module:
    - **Connection:** `dreamhelpers2025-gmail`
    - **To:** `{{1.payload.email}}` (the prospect's email from Calendly)
    - **From:** `dreamhelpers2025@gmail.com`
@@ -134,12 +177,14 @@ Have these ready before you sit down:
    - **Content type:** HTML
    - **Body:** copy **Email Template 1** from [`01-intake-automation-playbook.md` § "Email templates"](01-intake-automation-playbook.md#email-templates). Replace placeholders:
      - `[first name]` → `{{1.payload.name}}`
-     - `[Tally link]` → your Tally URL from Step 2, plus `?clientName={{1.payload.questions_and_answers[].answer}}` to pre-fill the hidden field
+     - `[Tally link]` → your Tally URL from Step 2 plus `?clientName={{clientName}}&segment={{segment}}` (uses the variables from the previous module — Tally reads these into the hidden fields and routes the segment-specific sections automatically)
      - `[Drive folder link]` → `{{2.webViewLink}}` (Make exposes this from the previous folder-copy module's output)
-9. Add a final notification module: **Gmail → Send Email** to `dreamhelpers2025@gmail.com`:
-   - **Subject:** `[Audit] New prospect: {{1.payload.questions_and_answers[].answer}}`
-   - **Body:** brief summary — client name, email, booking time, Drive folder URL
-10. Save the scenario. Leave it OFF for now — we test in Step 8.
+
+   **Future enhancement (skip for v1, ~30 min when you want it):** add a **Router** module after the segment normalization that branches into four paths (vet / insurance / shopify / other) — each path sends a slightly different welcome email tailored to that segment. For v1 the generic welcome email above works fine; segment routing still happens correctly in the Tally form via the URL parameter.
+10. Add a final notification module: **Gmail → Send Email** to `dreamhelpers2025@gmail.com`:
+    - **Subject:** `[Audit] New prospect: {{clientName}} ({{segment}})`
+    - **Body:** brief summary — client name, segment, email, booking time, Drive folder URL
+11. Save the scenario. Leave it OFF for now — we test in Step 8.
 
 **Note:** the Gist PATCH approach (updating the OS dashboard automatically from Make) is documented in the playbook but skipped here. The Gmail notification gives you the same information without the complexity of the GET-modify-PATCH chain. Wire dashboard updates later if you want.
 
@@ -188,12 +233,13 @@ Have these ready before you sit down:
 
 In one continuous session, in a fresh incognito browser:
 
-1. Open the Calendly link. Book a slot using your **personal Gmail** and business name `Test Audit 1`.
+1. Open the Calendly link. Book a slot using your **personal Gmail**, business name `Test Audit 1`, and segment `Veterinary clinic`.
 2. Wait 1 min. **Verify:**
    - Welcome email arrives in your personal inbox
    - Drive folder `Test Audit 1 — Audit 2026-06-XX` exists
-   - Notification email arrives at `dreamhelpers2025@gmail.com`
-3. Click the Tally link in the welcome email. Fill in answers (any). Submit.
+   - Notification email arrives at `dreamhelpers2025@gmail.com` with subject including `(vet)`
+   - The Tally link in the welcome email ends with `?clientName=Test+Audit+1&segment=vet`
+3. Click the Tally link in the welcome email. Confirm only the C-vet and D-vet variant sections show (not insurance, shopify, or other). Fill in answers (any). Submit.
 4. Wait 1 min. **Verify:**
    - Data-upload email arrives in your personal inbox
    - JSON file lands in the test client's Drive folder
