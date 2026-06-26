@@ -1,8 +1,22 @@
 # Soil Detective — Pain Point Map
 
-**Status:** Analysis artifact, built from `01-soil-detective-discovery-notes.md`
+**Status:** Analysis artifact, built from `01-soil-detective-discovery-notes.md`. Revised 2026-06-25 with A1 correction and hosting architecture context.
 **Owner:** Both founders
 **Purpose:** Categorize the 9 pain points captured in discovery, rank them by leverage and dependency, and surface the structural risks. This drives the Opportunity Matrix in `04-soil-detective-opportunity-matrix.md`.
+
+## Architectural context (locked 2026-06-25)
+
+The hosting decision shapes how every pain point in this doc gets scored for feasibility. **The decision: Option A — Squarespace stays as the production CMS / auth / payments / commerce / membership backbone. We build specialty AI tools as separate microapps that integrate with Squarespace.**
+
+Concrete implications for every item below:
+
+- **Squarespace owns:** site CMS, member auth, Stripe payments via Squarespace Commerce, basic membership tiers, newsletter, blog.
+- **We own:** specialty AI workflows (Ask Rosalinda, Tool Barn rentals, Soil Intelligence Portal, video repurposing pipeline, automated proposals).
+- **Where our apps live:** `apps.soildetective.org` (or similar subdomain). Squarespace links out / iframes in as appropriate.
+- **Brand consistency:** the lavender + Flower Power brand spec we built for the Astro rebuild also gets applied to her live Squarespace site via custom CSS injection. Same visual identity on both surfaces.
+- **Payments:** existing Squarespace Stripe connection handles memberships and workshops. Specialty flows Squarespace cannot handle elegantly (Tool Barn date-range rentals) use direct Stripe Checkout against the same Stripe account.
+
+This means feasibility scoring favors items that **slot cleanly alongside Squarespace** and disfavors items that would require us to replace Squarespace functionality.
 
 ## Glossary (read once, then skim)
 
@@ -25,10 +39,10 @@ The constraints here cost money today and will keep costing money until solved.
 
 | # | Pain point | Why it ranks highest |
 |---|---|---|
-| **A1** | "She HATES taking money" | Single biggest business risk. Memberships, services, managed plans — every revenue source depends on her getting comfortable charging. Solving this is partially design (payment UX that feels like community contribution, not transaction) and partially narrative (framing her work as a value exchange). Cannot be solved with code alone. |
-| **A2** | SOW murkiness — 4 projects without delineation | She is taking money from current clients but losing scope visibility. Direct downstream of A1: if she were comfortable charging, she would have structured scopes. Solution: rate sheet + automated proposal packaging. |
+| **A1** | Pricing structure across all offerings | **Revised 2026-06-25.** Earlier draft framed this as "she hates taking money." Founder correction: she is comfortable taking money when the structure is clean — she appreciated the structured pricing in the report. The real pain is that her current offerings (workshops, services, memberships) lack consistent structure, which creates hesitation in HER and confusion in customers. Solution: locked rate sheets per offering, tiered memberships with explicit benefits per tier (already drafted, see discovery notes §3), and renewal flows that feel professional rather than transactional. |
+| **A2** | SOW murkiness — 4 projects without delineation | Same root issue as A1, narrowed to service-engagement scope. Solution: rate sheet + automated proposal packaging tool that generates scope-locked SOWs in minutes. |
 
-**Pattern:** these are not really "automate this workflow" problems. They are **business-design problems** disguised as ops complaints. We must address them or everything else we build will sit on top of a broken revenue layer.
+**Pattern:** these are **design problems**, not coaching problems. Build the structure once (rate sheets + proposal generator + tiered membership benefits), and her comfort + customer trust both follow. The output is templates and a small automation, not a behavior change project.
 
 ### Category B — Time-leak operations (high leverage)
 
@@ -104,11 +118,11 @@ D2 (Recipe Builder ingredients) ──► fully independent. Smallest scope.
 
 ## Structural observations (read these before scoping)
 
-### 1. The revenue layer is the load-bearing constraint
+### 1. The revenue layer is structurally fine — it just needs templates
 
-Everything we build sits on top of Rosalinda's willingness to receive money. If we build the Tool Barn rental system and she gives away every rental, we built nothing. If we build the membership site and she refuses to enforce the payment gate, we built nothing.
+Earlier draft of this section assumed A1 was a structural risk requiring coaching. Founder correction (2026-06-25) clarified that Rosalinda is comfortable charging when the structure is clean. The pricing infrastructure (rate sheets, proposal generator, tier benefits) is a build deliverable, not a behavior project.
 
-**Implication for Implementation scope:** at least one of our 2–3 Implementation workflows must directly address A1. A "payment psychology" deliverable cannot stand alone (it is half product design, half coaching), so it has to be embedded in a workflow that requires payment to function — like the membership system or the Tool Barn rental booking.
+**Implication for Implementation scope:** A1 + A2 collapse into a single "pricing structure" deliverable — a small toolkit (locked rate sheet templates, an automated proposal packaging tool, the tiered membership benefits she already drafted) — that gets shipped as part of the broader pilot but does not need to be one of the 2–3 measured Implementation workflows.
 
 ### 2. The 2 TB of video is the highest single asset she owns and is sitting idle
 
@@ -144,8 +158,8 @@ These are real items Rosalinda mentioned that should not be in Implementation:
 
 | Pain | Category | Hours/week saved if solved | Revenue protected if solved | Public case study fit | Independent? |
 |---|---|---|---|---|---|
-| A1 — Can't take money | Business design | Indirect (unblocks $) | Very high | Hard — narrative, not visible | No (everything depends on it) |
-| A2 — SOW murkiness | Business design | 1–2 (proposal time) | Medium (better scope = better margin) | Medium | Depends on A1 |
+| A1 — Pricing structure needed | Business design (build templates) | Indirect (unblocks $) | High | Low — internal toolkit | Yes (build once, ship as toolkit) |
+| A2 — SOW murkiness | Business design (proposal generator) | 1–2 (proposal time) | Medium (better scope = better margin) | Medium | Bundled with A1 |
 | B1 — Community ops | Time-leak ops | TBD (need list) | Low | Medium | Blocked (need list) |
 | B2 — Tool Barn | Time-leak ops | 1–3 | Medium (more rentals booked) | **High** — concrete metrics | Yes |
 | B3 — Ask Rosalinda | Time-leak ops | 3–8 (estimate, unmeasured) | Low | **Very high** — visibly AI | Yes |
