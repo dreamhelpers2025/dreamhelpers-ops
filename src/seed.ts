@@ -1,4 +1,4 @@
-import type { AppState, SprintTask, Milestone, WeekTheme } from './types';
+import type { AppState, SprintTask, Milestone, WeekTheme, Audit } from './types';
 
 // Week 1 = Mon 2026-06-22
 // Week 2 = Mon 2026-06-29
@@ -293,6 +293,22 @@ export const seedMilestones: Milestone[] = [
     W4[4]),
 ];
 
+export const seedAudits: Audit[] = [
+  {
+    id: 'audit-soil-detective-beta',
+    client: 'Soil Detective (Rosalinda)',
+    segment: 'other',
+    status: 'Questionnaire sent',
+    stage: 'Day 0',
+    createdAt: '2026-06-24T00:00:00Z',
+    driveFolder: '',
+    calendlyEventUrl: '',
+    notes: 'Beta pilot — free audit, custom revenue-share managed pricing. Discovery questionnaire generated from framework template 01 (see deliverables/pilot/05). Manual track for now; will migrate to intake automation once Make.com scenarios are wired up.',
+    lastUpdatedAt: '2026-06-25T00:00:00Z',
+    lastUpdatedBy: 'a',
+  },
+];
+
 export const seedState: AppState = {
   schemaVersion: 1,
   team: {
@@ -303,6 +319,7 @@ export const seedState: AppState = {
   weeks: seedWeeks,
   tasks: seedTasks,
   milestones: seedMilestones,
+  audits: seedAudits,
   notes: '',
   lastUpdatedAt: null,
   lastUpdatedBy: null,

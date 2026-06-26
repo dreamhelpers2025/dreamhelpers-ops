@@ -4,17 +4,19 @@ import { Dashboard } from './components/Dashboard';
 import { Timeline } from './components/Timeline';
 import { Schedule } from './components/Schedule';
 import { Deliverables } from './components/Deliverables';
+import { Audits } from './components/Audits';
 import { Settings } from './components/Settings';
 import { SyncBadge } from './components/SyncBadge';
 import { fmtDateLong, todayIso } from './lib/util';
 
-type View = 'dashboard' | 'timeline' | 'schedule' | 'deliverables' | 'settings';
+type View = 'dashboard' | 'timeline' | 'schedule' | 'deliverables' | 'audits' | 'settings';
 
 const NAV: { id: View; label: string }[] = [
   { id: 'dashboard',    label: 'Dashboard' },
   { id: 'timeline',     label: 'Timeline' },
   { id: 'schedule',     label: 'Schedule' },
   { id: 'deliverables', label: 'Deliverables' },
+  { id: 'audits',       label: 'Audits' },
   { id: 'settings',     label: 'Settings' },
 ];
 
@@ -92,6 +94,7 @@ export default function App() {
         {view === 'timeline'     && <Timeline store={store} />}
         {view === 'schedule'     && <Schedule store={store} />}
         {view === 'deliverables' && <Deliverables store={store} />}
+        {view === 'audits'       && <Audits store={store} />}
         {view === 'settings'     && <Settings store={store} />}
       </main>
 

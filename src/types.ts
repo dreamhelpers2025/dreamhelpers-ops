@@ -42,6 +42,36 @@ export interface Milestone {
   completedAt: string | null;
 }
 
+export type AuditStatus =
+  | 'Discovery booked'
+  | 'Questionnaire sent'
+  | 'Questionnaire received'
+  | 'Day 1 — data received'
+  | 'Day 2-4 — analysis'
+  | 'Day 5 — walkthrough scheduled'
+  | 'Walkthrough complete — decision pending'
+  | 'Closed — Implementation signed'
+  | 'Closed — follow-up scheduled'
+  | 'Closed — declined';
+
+export type AuditStage = 'Day 0' | 'Day 1' | 'Day 2' | 'Day 3' | 'Day 4' | 'Day 5' | 'Closed';
+
+export type AuditSegment = 'vet' | 'insurance' | 'shopify' | 'other';
+
+export interface Audit {
+  id: string;
+  client: string;
+  segment: AuditSegment;
+  status: AuditStatus;
+  stage: AuditStage;
+  createdAt: string;            // ISO timestamp
+  driveFolder: string;          // URL or empty
+  calendlyEventUrl: string;     // URL or empty
+  notes: string;
+  lastUpdatedAt: string | null;
+  lastUpdatedBy: string;        // 'make.com' or a PersonId
+}
+
 export interface AppState {
   schemaVersion: 1;
   team: { a: TeamMember; b: TeamMember };
@@ -49,6 +79,7 @@ export interface AppState {
   weeks: WeekTheme[];
   tasks: SprintTask[];
   milestones: Milestone[];
+  audits: Audit[];             // populated by Make.com intake automation
   notes: string;               // shared scratch pad
   lastUpdatedAt: string | null;
   lastUpdatedBy: PersonId | null;

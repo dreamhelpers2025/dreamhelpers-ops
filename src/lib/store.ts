@@ -32,6 +32,14 @@ function saveLocal(key: string, value: unknown) {
   }
 }
 
+// Backwards-compat: older Gist payloads predate the audits array. Normalize on load.
+function normalizeState(s: AppState): AppState {
+  return {
+    ...s,
+    audits: Array.isArray(s.audits) ? s.audits : [],
+  };
+}
+
 export type SyncStatus = 'idle' | 'loading' | 'saving' | 'ok' | 'error' | 'no-config';
 
 export interface StoreApi {
@@ -50,7 +58,7 @@ export interface StoreApi {
 }
 
 export function useStore(): StoreApi {
-  const [state, setStateRaw] = useState<AppState>(() => loadLocal<AppState>(STATE_KEY, seedState));
+  const [state, setStateRaw] = useState<AppState>(() => normalizeState(loadLocal<AppState>(STATE_KEY, seedState)));
   const [settings, setSettingsRaw] = useState<SyncSettings>(() => loadLocal<SyncSettings>(SETTINGS_KEY, defaultSettings));
   const [syncStatus, setSyncStatus] = useState<SyncStatus>('idle');
   const [syncError, setSyncError] = useState<string | null>(null);
@@ -76,8 +84,9 @@ export function useStore(): StoreApi {
       try {
         const remote = await loadFromGist(settings);
         if (cancelled || !remote) return;
-        setStateRaw(remote.state);
-        lastSavedJson.current = JSON.stringify(remote.state);
+        const normalized = normalizeState(remote.state);
+        setStateRaw(normalized);
+        lastSavedJson.current = JSON.stringify(normalized);
         setLastSyncedAt(remote.updatedAt);
         setSyncStatus('ok');
       } catch (e) {
@@ -140,8 +149,9 @@ export function useStore(): StoreApi {
     try {
       const remote = await loadFromGist(settings);
       if (remote) {
-        setStateRaw(remote.state);
-        lastSavedJson.current = JSON.stringify(remote.state);
+        const normalized = normalizeState(remote.state);
+        setStateRaw(normalized);
+        lastSavedJson.current = JSON.stringify(normalized);
         setLastSyncedAt(remote.updatedAt);
       }
       setSyncStatus('ok');
