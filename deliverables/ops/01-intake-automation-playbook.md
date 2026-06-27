@@ -1,9 +1,19 @@
 # Intake Automation Playbook (Phase 1 MVP)
 
-**Status:** Setup spec for our internal audit intake stack. Built before Rosalinda's questionnaire ships so Soil Detective is the first audit through the automated flow.
+**Status:** Setup spec for our internal audit intake stack. Updated 2026-06-26 — Tally replaced by our own [dreamhelpers-intake](https://github.com/dreamhelpers2025/dreamhelpers-intake) portal + Supabase, Make Scenario 2 replaced by a Supabase Postgres trigger. Soil Detective is the first audit through the automated flow.
 **Owner:** Both founders. Claude produces specs; humans click through SaaS UIs.
 **Purpose:** Eliminate manual email shuffling on every audit. Triggers fire from a prospect booking a discovery call all the way to Day 5 walkthrough reminders.
-**Architecture posture:** Phase 1 uses best-of-breed SaaS stitched with Make.com. No custom backend. We re-evaluate at audit #3–5 whether to build the Phase 2 custom portal.
+**Architecture posture:** Phase 1 is a hybrid — Calendly + Make.com for orchestration of the booking side, our own portal + Supabase for the form and storage side. We built the portal v0.1 because Tally's free tier could not handle conditional logic and Tally Pro cost $29/mo. We re-evaluate at audit #3–5 whether to extend the portal further or wait.
+
+> **⚠ Architecture changed mid-build.** The original Phase 1 design used Tally for the form layer (steps and diagrams below still reference it). On 2026-06-26 we replaced Tally with our own portal because of free-tier limits. The **walkthrough doc (`02-intake-automation-setup-walkthrough.md`) is the up-to-date source of truth for actual setup.** This playbook below preserves the original architecture as conceptual reference; treat any Tally mention as "our custom portal does this now."
+>
+> **What changed concretely:**
+> - Tally → [dreamhelpers-intake portal](https://dreamhelpers2025.github.io/dreamhelpers-intake/) (Astro + React, deployed to GH Pages)
+> - Tally webhook → Supabase REST API write from the portal frontend (anon key)
+> - Tally form responses → Supabase Postgres `responses` table
+> - Tally file uploads → Supabase Storage `uploads` bucket
+> - Make.com Scenario 2 → Supabase Postgres trigger calling Resend via pg_net (no Make module needed)
+> - All other scenarios (Calendly trigger, welcome email, Drive folder copy, file-watch) unchanged
 
 ## Glossary (read once, then skim)
 

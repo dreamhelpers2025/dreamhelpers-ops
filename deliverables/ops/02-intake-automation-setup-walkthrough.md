@@ -1,8 +1,8 @@
 # Intake Automation Setup Walkthrough
 
-**Status:** Step-by-step companion to `01-intake-automation-playbook.md`. This is the "click here, then click there, then verify" version — use it the afternoon you sit down to build the SaaS stack.
+**Status:** v3, updated 2026-06-26 — replaces Tally with our custom intake portal at `dreamhelpers-intake` and pulls Make.com Scenario 2 inside the Supabase Postgres trigger. Net effect: shorter, cheaper, more controllable.
 **Owner:** Whichever founder is doing the setup (Claude can help debug live if you hit a snag).
-**Total time:** ~3.5 hours of focused click-through. Don't context-switch — this kind of integration work compounds errors when interrupted.
+**Total time:** ~2.5 hours of focused click-through (down from 3.5 when Tally was in the stack).
 **Prerequisite:** read `01-intake-automation-playbook.md` first so you know what we're building and why. This doc skips the why.
 
 ## Glossary (read once, then skim)
@@ -65,55 +65,41 @@ Have these ready before you sit down:
 
 ---
 
-## Step 2 — Tally form (45 min — the longest step)
+## Step 2 — Confirm the custom intake portal is live (5 min)
 
-1. Go to **https://tally.so**. Sign up with `dreamhelpers2025` Google account. Free plan is enough for now.
-2. Click **+ Create a form → Start from scratch**.
-3. Title at top: `Founder Hours Audit — Discovery Questionnaire`.
-4. Open these two repo files side-by-side as your spec source:
-   - [`deliverables/framework/templates/01-discovery-questionnaire.md`](../framework/templates/01-discovery-questionnaire.md) — the generic template (the source of truth for question labels)
-   - [`deliverables/pilot/05-soil-detective-discovery-questionnaire.md`](../pilot/05-soil-detective-discovery-questionnaire.md) — Rosalinda's pre-filled version, just for reference
+**No setup required for the form itself — it's already built and deployed.** This step replaces what was previously 45 minutes of Tally configuration.
 
-   **Use the generic template for the form structure.** Every audit reuses the same form — Rosalinda's pre-fills are her instance, not the form.
+The intake portal lives at: **https://dreamhelpers2025.github.io/dreamhelpers-intake/**
 
-5. Build the form by adding blocks. For each question in the generic template (Sections A–H):
-   - **Section header** (A, B, C, etc.) → Tally **"Heading 2"** block (one per section letter)
-   - **Short text answers** (A1, A2, A4, A6, B2–B4, etc.) → **"Short answer"** block
-   - **Long text answers** (B2, C6, E2, E4, G4, H5, H6) → **"Long answer"** block
-   - **Multiple choice** (A3 revenue band) → **"Multiple choice"** block, single select
-   - **Hours-per-week category table** (B1) → 8 separate **"Number"** blocks, one per category, with the category name in the label
-   - **File uploads** (rate sheets, paper photos, etc.) → **"File upload"** block (Tally free supports it)
-   - **Tier table** (H1) → 5 **"Long answer"** blocks (Seed/Sprout/Root/Mycelium/Forest), with the tier price in the label
+Source code: https://github.com/dreamhelpers2025/dreamhelpers-intake
+Backend: Supabase project `vmewqxmnvyszbwioqiby` (Postgres for responses, Storage for file uploads)
+Notification: Resend trigger fires on every submission, emails `dreamhelpers2025@gmail.com`
 
-6. Add **two "Hidden field" blocks at the top** — Make.com populates both from the Calendly booking via URL parameters:
-   - Hidden field 1: name `clientName`
-   - Hidden field 2: name `segment` — accepts values `vet`, `insurance`, `shopify`, `other`
+### URL parameters the portal accepts
 
-7. **Segment-specific questions and conditional logic.** Sections A, B, E, F, G, H are universal — they show to every prospect. Sections C and D have variants per segment. We don't build four separate forms; instead, we add segment-specific blocks alongside the universal ones and use Tally's conditional logic so each prospect sees only the variant matching their segment.
+The portal reads URL parameters and pre-fills hidden fields plus drives the segment-specific section routing:
 
-   For Section C (tool stack), build all four variants as separate sub-sections of the same form:
-   - **C-vet block:** PIMS questions (which platform, etc.)
-   - **C-insurance block:** AMS questions
-   - **C-shopify block:** Sidekick / Klaviyo / VA questions
-   - **C-other block:** generic tool stack questions
+| Parameter | What it does | Example |
+|---|---|---|
+| `clientName` | Pre-fills the welcome line + the businessName field | `?clientName=Acme%20Vet` |
+| `segment` | Drives which Tool Stack (C) and Touch Points (D) variant shows | `?segment=vet` (or `insurance` / `shopify` / `other`) |
 
-   For each variant block, click the lightning-bolt icon (Tally's conditional logic) → **Add condition → Show this block when** `segment` **equals** `vet` (or `insurance`, `shopify`, `other`).
+Combined example: `https://dreamhelpers2025.github.io/dreamhelpers-intake/?segment=vet&clientName=Acme%20Vet`
 
-   Do the same for Section D (touch points) — four variant blocks each conditionally shown based on `segment`.
+### Quick verification
 
-   Result: a vet prospect sees A, B, C-vet, D-vet, E, F, G, H. A Shopify prospect sees A, B, C-shopify, D-shopify, E, F, G, H. The "Other" segment skips C-variant and D-variant entirely and goes A, B, E, F, G, H.
+Open these in an incognito window — confirm the segment-specific sections show/hide correctly:
 
-8. (Optional, can skip for v1) **Settings → Logic** lets you add additional page transitions. Skip for speed.
-9. Click **Publish** in the top-right. Pick a custom slug like `dh-audit-discovery`. The public URL becomes `https://tally.so/r/dh-audit-discovery`. **Save this URL — you use it in Step 5.**
-10. Stay on Tally. Click **Integrations → Webhooks → Add webhook**. **Leave the URL field empty for now** — we fill it in Step 7. Just leave this tab open in your browser.
-
-**STOP and verify:** Open the published form URL with the segment URL parameter set to test each variant. Try each in an incognito window:
-- `https://tally.so/r/dh-audit-discovery?segment=vet` → confirm only C-vet and D-vet blocks show
-- `?segment=insurance` → confirm only C-insurance and D-insurance show
-- `?segment=shopify` → confirm only C-shopify and D-shopify show
-- `?segment=other` → confirm neither C-variant nor D-variant blocks show
+- `https://dreamhelpers2025.github.io/dreamhelpers-intake/?segment=vet&clientName=Test` → vet-specific PIMS/practice-manager/PE questions show; insurance/Shopify variants do not
+- `?segment=insurance&clientName=Test` → AMS/Big I/carrier questions show
+- `?segment=shopify&clientName=Test` → Sidekick/Klaviyo/VA questions show
+- `?segment=other&clientName=Test` → none of the C/D variants show; Section H Custom Notes shows
 
 Don't submit. Close.
+
+### If you need to edit a question
+
+Edit `src/components/IntakeForm.tsx` in the `dreamhelpers-intake` repo. Push to `main` triggers an automatic GH Pages redeploy. Production URL stays the same.
 
 ---
 
@@ -177,7 +163,7 @@ Don't submit. Close.
    - **Content type:** HTML
    - **Body:** copy **Email Template 1** from [`01-intake-automation-playbook.md` § "Email templates"](01-intake-automation-playbook.md#email-templates). Replace placeholders:
      - `[first name]` → `{{1.payload.name}}`
-     - `[Tally link]` → your Tally URL from Step 2 plus `?clientName={{clientName}}&segment={{segment}}` (uses the variables from the previous module — Tally reads these into the hidden fields and routes the segment-specific sections automatically)
+     - `[Intake portal link]` → `https://dreamhelpers2025.github.io/dreamhelpers-intake/?clientName={{clientName}}&segment={{segment}}` (our custom portal reads these from the URL to pre-fill the welcome line and route the segment-specific sections automatically)
      - `[Drive folder link]` → `{{2.webViewLink}}` (Make exposes this from the previous folder-copy module's output)
 
    **Future enhancement (skip for v1, ~30 min when you want it):** add a **Router** module after the segment normalization that branches into four paths (vet / insurance / shopify / other) — each path sends a slightly different welcome email tailored to that segment. For v1 the generic welcome email above works fine; segment routing still happens correctly in the Tally form via the URL parameter.
@@ -190,27 +176,73 @@ Don't submit. Close.
 
 ---
 
-## Step 6 — Scenario 2: Questionnaire Received (30 min)
+## Step 6 — Postgres trigger handles questionnaire received (already done)
 
-1. **Scenarios → + Create new**. Title: `2. Questionnaire Received`.
-2. First module: **Webhooks → Custom webhook**. Add → name `tally-questionnaire-received`. Make generates a webhook URL like `https://hook.us1.make.com/abc123…`. **Copy this URL — Step 7 needs it.**
-3. Switch to your Tally tab from Step 2. Edit the form → **Integrations → Webhooks → Add → paste the Make webhook URL → Save**.
-4. Back in Make, click the webhook module → **Redetermine data structure**. It'll show "Waiting for data." In a third tab, open the Tally public form URL, fill in dummy answers, submit. Make captures the structure within seconds.
-5. Next module: **Google Drive → Upload a file**:
-   - **Folder:** for v1, hard-code to your test client folder created in Step 5. We'll improve dynamic folder lookup once a real flow proves out.
-   - **File source:** Map → "Generate from data" → use the JSON payload from the webhook
-   - **Filename:** `Questionnaire Response — {{webhook.submittedAt}}.json`
-6. Next module: **Gmail → Send Email**:
-   - **To:** `{{webhook.respondent.email}}` (Make shows the actual field path from the webhook structure)
-   - **Subject:** `Audit Day 1 — data upload checklist`
-   - **Body:** copy **Email Template 2** from the playbook
-7. Final notification module: **Gmail → Send Email** to `dreamhelpers2025@gmail.com`, subject `[Audit] Questionnaire received from {{clientName}}`.
-8. Save. Toggle scenario **ON**.
+**This step replaces what was Make Scenario 2 (~30 min of click-through).** The intake portal saves submissions directly to Supabase, and a Postgres trigger fires the notification email via Resend. Everything is already wired — this step is just for confirming and (optionally) extending the trigger to also send a prospect-facing "we got it" email.
 
-**STOP and verify:** submit a second test response on Tally. Within 1 min:
-- A JSON file lands in Drive
-- The data-upload email arrives at the email address you entered in the form
-- The notification email arrives at `dreamhelpers2025@gmail.com`
+### What's already running
+
+- Form submission → INSERT into `public.responses` (Supabase Postgres)
+- File uploads → `uploads/{submission-id}/...` (Supabase Storage)
+- Postgres trigger `notify_on_response_insert` → calls Resend → emails `dreamhelpers2025@gmail.com` with subject `[Audit] New intake: {client} ({segment})`
+
+Trigger source: [`dreamhelpers-intake/supabase/notify.sql`](https://github.com/dreamhelpers2025/dreamhelpers-intake/blob/main/supabase/notify.sql).
+
+### Optional — add a prospect-facing acknowledgment email
+
+If you want the prospect to get an immediate "we got your intake, here's what happens next" confirmation, extend the trigger function in Supabase SQL Editor:
+
+```sql
+-- Add this after the existing notify_resend() function, OR replace notify_resend
+-- with a version that sends two emails.
+
+create or replace function public.notify_resend()
+returns trigger
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare
+  request_id bigint;
+  resend_key text := 'YOUR_RESEND_API_KEY';  -- same key as before
+  prospect_email text;
+begin
+  -- Existing internal notification (unchanged) — sends to dreamhelpers2025@gmail.com
+  select net.http_post(
+    url := 'https://api.resend.com/emails',
+    headers := jsonb_build_object('Content-Type', 'application/json', 'Authorization', format('Bearer %s', resend_key)),
+    body := jsonb_build_object(
+      'from', 'Dream Helpers Intake <onboarding@resend.dev>',
+      'to', jsonb_build_array('dreamhelpers2025@gmail.com'),
+      'subject', format('[Audit] New intake: %s (%s)', coalesce(new.client_name, 'unknown'), new.segment),
+      'html', format('<h2>New audit intake submitted</h2><p><strong>Client:</strong> %s</p><p><strong>Segment:</strong> %s</p>',
+                     coalesce(new.client_name, '(no name)'), new.segment)
+    )
+  ) into request_id;
+
+  -- New: prospect-facing acknowledgment (only if their email is in the payload)
+  prospect_email := new.payload->>'prospectEmail';  -- requires the form to capture email
+  if prospect_email is not null then
+    select net.http_post(
+      url := 'https://api.resend.com/emails',
+      headers := jsonb_build_object('Content-Type', 'application/json', 'Authorization', format('Bearer %s', resend_key)),
+      body := jsonb_build_object(
+        'from', 'Dream Helpers <onboarding@resend.dev>',
+        'to', jsonb_build_array(prospect_email),
+        'subject', 'Got it — your Dream Helpers audit intake is in',
+        'html', '<p>Thanks for submitting your audit intake. We''ll review and reach out within 1 business day with the next step — usually a quick confirmation call and the shared folder for any data exports.</p><p>— Dream Helpers</p>'
+      )
+    ) into request_id;
+  end if;
+
+  return new;
+end;
+$$;
+```
+
+Note: the prospect-facing email requires the form to capture `prospectEmail` in the payload. Make Scenario 1 already collects this from the Calendly booking — to make it available in the portal, append `&prospectEmail={{1.payload.email}}` to the welcome-email link's URL parameters (alongside `clientName` and `segment`).
+
+If you skip this enhancement, the prospect still sees the thank-you page that confirms their submission. The internal notification email still works either way.
 
 ---
 
@@ -237,15 +269,15 @@ In one continuous session, in a fresh incognito browser:
 2. Wait 1 min. **Verify:**
    - Welcome email arrives in your personal inbox
    - Drive folder `Test Audit 1 — Audit 2026-06-XX` exists
-   - Notification email arrives at `dreamhelpers2025@gmail.com` with subject including `(vet)`
-   - The Tally link in the welcome email ends with `?clientName=Test+Audit+1&segment=vet`
-3. Click the Tally link in the welcome email. Confirm only the C-vet and D-vet variant sections show (not insurance, shopify, or other). Fill in answers (any). Submit.
-4. Wait 1 min. **Verify:**
-   - Data-upload email arrives in your personal inbox
-   - JSON file lands in the test client's Drive folder
-   - Notification arrives at `dreamhelpers2025@gmail.com`
+   - Internal-notification email arrives at `dreamhelpers2025@gmail.com` (the one from Scenario 1's final Gmail module, before the form is even submitted)
+   - The portal link in the welcome email is `https://dreamhelpers2025.github.io/dreamhelpers-intake/?clientName=Test+Audit+1&segment=vet`
+3. Click the portal link in the welcome email. Confirm only the C-vet and D-vet variant sections show (not insurance, shopify, or other). Fill in answers (any). Submit.
+4. Wait 30 sec. **Verify:**
+   - You land on the thank-you page at `https://dreamhelpers2025.github.io/dreamhelpers-intake/thank-you/`
+   - Notification email arrives at `dreamhelpers2025@gmail.com` from `onboarding@resend.dev` with subject `[Audit] New intake: Test Audit 1 (vet)` — this is from the Postgres trigger, not Make
+   - In Supabase Studio → Table Editor → `responses`, the new row exists with `segment=vet` and the full payload
 5. From your personal Gmail or any other browser, drop a test file into Drive folder `Test Audit 1.../02 — Client Data Uploads/`.
-6. Wait 1 min. **Verify:** notification arrives.
+6. Wait 1 min. **Verify:** notification arrives (from Scenario 3 in Make).
 7. **Clean up:** delete the test client folder, cancel the Calendly booking in the test inbox, archive test emails.
 
 **If all 6 checkpoints pass → system is live.**
@@ -267,9 +299,10 @@ She books → the whole pipeline fires automatically → you and Grant get pinge
 ## What we deferred (you do NOT need any of this today)
 
 - **Scenarios 4 and 5** (walkthrough reminder + post-call deck delivery): both manual-trigger, easy to add when you actually need them. ~30 min of additional Make work each.
-- **Dashboard PATCH from Make** (so the OS dashboard Audits view auto-updates from the flow): the Gmail-notification approach gets us the same information without the complexity. Wire dashboard updates later if you want — ~20 min of additional Make work using HTTP modules with a GET → modify → PATCH pattern.
+- **Dashboard PATCH from Make** (so the OS dashboard Audits view auto-updates from the flow): the Gmail-notification approach gets us the same information without the complexity. Wire dashboard updates later if you want — alternative: extend the Postgres trigger to PATCH the OS dashboard Gist directly using `pg_net`, no Make module needed.
 - **Slack integration:** Gmail notifications to `dreamhelpers2025@gmail.com` work fine for v1.
-- **Custom domain email** (e.g., `audits@dreamhelpers.org`): later. `dreamhelpers2025@gmail.com` is fine.
+- **Custom domain email** (e.g., `audits@dreamhelpers.org`): later. `onboarding@resend.dev` is fine for the trigger, and `dreamhelpers2025@gmail.com` is fine for Make-sent emails.
+- **Prospect-facing acknowledgment email** after intake submission: optional enhancement to the Postgres trigger documented in Step 6.
 
 ---
 
@@ -278,13 +311,14 @@ She books → the whole pipeline fires automatically → you and Grant get pinge
 Most common issues we'll see:
 
 - **"Connection expired"** in Make → Connections page → click the red one → re-auth.
-- **Tally webhook doesn't fire** → check the webhook URL in Tally matches the Make webhook module exactly. Re-copy from Make if needed. Webhooks are case-sensitive and trailing-slash sensitive.
+- **Intake portal won't load** → check `https://dreamhelpers2025.github.io/dreamhelpers-intake/` is up. If it shows a 404, the GH Pages deploy is broken — check Actions tab in the `dreamhelpers-intake` repo.
+- **Form submits but no notification email arrives** → check the Resend trigger fired by looking at the row in `responses` table (Supabase Studio). If the row is there, the trigger likely failed silently. Run `select * from net._http_response order by created desc limit 5;` in SQL Editor to see Resend's response.
+- **"new row violates row-level security policy"** when submitting → run `supabase/fix-rls.sql` from the intake repo in Supabase SQL Editor. This is a known one-time RLS fix if the original `schema.sql` was applied before the patch.
 - **Drive folder copy fails** → confirm the template folder ID is correct (it's the long string in the folder's URL after `/folders/`, not the name).
 - **Calendly trigger never fires** → confirm the event type filter matches exactly. The "Watch Events" trigger only fires for events created AFTER the scenario was set to "from now on."
 - **Make module errors with red bubble** → click the bubble to see the actual error message. Most are auth or field mapping.
-- **Tally answers come through as `q_abc123` field names instead of question text** → that's Tally's webhook payload format. In Make's mapping UI, hover the field to see the question text mapped to that ID.
 
-When something's stuck, message me with: which step, which module, and a screenshot of the error. I can usually diagnose in 2–3 minutes.
+When something's stuck, message me with: which step, which module/component, and a screenshot of the error. I can usually diagnose in 2–3 minutes.
 
 ---
 
@@ -294,16 +328,16 @@ When something's stuck, message me with: which step, which module, and a screens
 |---|---|---:|---:|
 | Prep | Sign-ins, tokens, cards ready | 10 min | 10 min |
 | 1 | Calendly | 15 min | 25 min |
-| 2 | Tally | 45 min | 70 min |
-| 3 | Drive | 10 min | 80 min |
-| 4 | Make signup + connections | 20 min | 100 min |
-| 5 | Scenario 1 | 30 min | 130 min |
-| 6 | Scenario 2 | 30 min | 160 min |
-| 7 | Scenario 3 | 15 min | 175 min |
-| 8 | End-to-end test | 30 min | 205 min |
-| 9 | Send Rosalinda | 5 min | 210 min |
+| 2 | Confirm intake portal is live (no setup) | 5 min | 30 min |
+| 3 | Drive folder template | 10 min | 40 min |
+| 4 | Make signup + connections (Tally connection no longer needed) | 15 min | 55 min |
+| 5 | Scenario 1: New Prospect Onboarding (welcome email links to our portal) | 30 min | 85 min |
+| 6 | Postgres trigger (already done — optional acknowledgment email enhancement ~15 min) | 0–15 min | 85–100 min |
+| 7 | Scenario 3: Data Received | 15 min | 100–115 min |
+| 8 | End-to-end test | 30 min | 130–145 min |
+| 9 | Send Rosalinda | 5 min | 135–150 min |
 
-**Total: 3.5 hours of focused click-through.**
+**Total: ~2.5 hours of focused click-through (down from 3.5 hours when Tally was in the stack).**
 
 Plan a single afternoon block; this kind of integration work shouldn't be context-switched.
 
