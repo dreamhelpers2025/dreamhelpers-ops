@@ -32,7 +32,7 @@ ADRs are immutable once filed. If the decision changes, write a NEW ADR that sup
 
 **Status:** [Proposed / Accepted / Superseded by ADR-XXX]
 **Date:** YYYY-MM-DD
-**Decision-makers:** [name(s) — typically one Dream Helpers founder + buyer-side decision-maker]
+**Decision-makers:** [name(s) — typically one Tack founder + buyer-side decision-maker]
 **Engagement:** [client name]
 **Reversibility:** [one-way door / two-way door]
 
@@ -95,5 +95,5 @@ If one-way, briefly explain the test we'd run to validate the decision before co
 
 ## Sign-off
 
-- Dream Helpers: [name], [date]
+- Tack: [name], [date]
 - Client decision-maker: [name], [date] (only for decisions affecting client scope or cost)

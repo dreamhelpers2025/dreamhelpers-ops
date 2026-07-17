@@ -23,7 +23,7 @@ Every audit deck has exactly these 10 slides in this order. Slide content varies
 - Client name
 - Title: "[Practice / Founder / Owner] Hours Audit"
 - Date
-- Prepared by Dream Helpers
+- Prepared by Tack
 - Logo
 
 ### Slide 2 — What we did
@@ -78,7 +78,7 @@ For Shopify, vet, insurance, or other ICPs that have bundled-AI competitors, thi
 
 This slide neutralizes the "but I have Sidekick" objection before it's raised on the call.
 
-For clients with no bundled AI competitor (Soil Detective beta is an example), this slide becomes "AI tools available to you today" — a quick survey of what's in market she could adopt that requires no Dream Helpers work.
+For clients with no bundled AI competitor (Soil Detective beta is an example), this slide becomes "AI tools available to you today" — a quick survey of what's in market she could adopt that requires no Tack work.
 
 ### Slide 7 — AI Opportunity Matrix
 
@@ -127,7 +127,7 @@ Below the table:
 2. **Yes, but I need to think.** That's fine — the $750 credit holds for 30 days. Here's our calendar to schedule a follow-up.
 3. **Not now.** Also fine. Keep the audit deck; the findings are yours. We'll check in at 90 days.
 
-Closes with: contact info, Dream Helpers logo, "thank you."
+Closes with: contact info, Tack logo, "thank you."
 
 ---
 
@@ -145,11 +145,11 @@ Most engagements never use the appendix. Build the deck without it; add only if 
 
 ## Visual standards
 
-- **Brand:** Dream Helpers brand palette. Lavender primary, cream backgrounds, dark forest text.
-- **Font:** Inter for body, Flower Power (Adobe) for slide titles when available.
+- **Brand:** Tack brand palette v0.1.1 (see [`deliverables/09-brand-identity-v0.1.md`](../../09-brand-identity-v0.1.md)). Deep navy #0F2540 primary, crisp white background, warm teal #0A9294 interactive accent, burnt orange #C55A2C for CTAs/highlights. Body copy in warm dark gray #1F2937.
+- **Font:** Manrope for slide titles (weight 700–800), Inter for body copy. Both Google Fonts, both free.
 - **Imagery:** none of the client's competitors' logos. Use generic icons or no icons.
 - **Tables / charts:** simple. No 3D, no gradient fills, no logos in tables.
-- **Tone:** confident, specific, range-based on numbers, never aspirational. Dream Helpers does not say "could potentially save you up to X"; we say "saves you 8–12 hours per week."
+- **Tone:** confident, specific, range-based on numbers, never aspirational. Tack does not say "could potentially save you up to X"; we say "saves you 8–12 hours per week."
 
 ---
 

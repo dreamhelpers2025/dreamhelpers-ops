@@ -40,7 +40,7 @@ Overall priority is a weighted blend:
 
 ★ = recommended for Implementation. Rest = pilot work, off-camera, or deferred.
 
-**Update 2026-06-25:** B1 (community membership ops) is no longer blocked. The "handwritten list" was the membership tier draft itself — each tier benefit is an ongoing operational task. B1 has been merged with C1 into a single **Member Engagement Pipeline** (third recommended lock), because the video pipeline is the content engine that feeds the tier-promised newsletters, workshop materials, and demonstration recordings that B1 delivers. Merging them sharpens the case-study story ("Dream Helpers built her entire member engagement engine") instead of producing two separate workflows that look loosely related.
+**Update 2026-06-25:** B1 (community membership ops) is no longer blocked. The "handwritten list" was the membership tier draft itself — each tier benefit is an ongoing operational task. B1 has been merged with C1 into a single **Member Engagement Pipeline** (third recommended lock), because the video pipeline is the content engine that feeds the tier-promised newsletters, workshop materials, and demonstration recordings that B1 delivers. Merging them sharpens the case-study story ("Tack built her entire member engagement engine") instead of producing two separate workflows that look loosely related.
 
 ---
 
@@ -50,7 +50,7 @@ Overall priority is a weighted blend:
 
 **What it is:** A chatbot trained on her existing content (videos, written posts, FAQs) that answers visitors' soil questions in her voice. Embedded on the Squarespace site and surfaced through Patreon and email auto-replies.
 
-**Why it scores highest:** strongest case-study magnet of the entire pilot. Vet practice managers and insurance agency principals — our two real ICPs — both immediately recognize "AI assistant that answers customer questions in our voice" because they've seen the ChatGPT analog. It is the deliverable that says "Dream Helpers does AI ops" without anyone needing to read fine print.
+**Why it scores highest:** strongest case-study magnet of the entire pilot. Vet practice managers and insurance agency principals — our two real ICPs — both immediately recognize "AI assistant that answers customer questions in our voice" because they've seen the ChatGPT analog. It is the deliverable that says "Tack does AI ops" without anyone needing to read fine print.
 
 **Feasibility 9/10:**
 - Built on Claude or OpenAI API with retrieval over her content corpus

@@ -7,7 +7,7 @@
 
 ## Glossary (read once, then skim)
 
-- **Feasibility** — how much work it takes to ship a credible v1 given Dream Helpers' constraints (2 founders, ~30 hrs/week, current Implementation tier scope of $4.5K–$12K). 1–10. Higher = easier to ship.
+- **Feasibility** — how much work it takes to ship a credible v1 given Tack' constraints (2 founders, ~30 hrs/week, current Implementation tier scope of $4.5K–$12K). 1–10. Higher = easier to ship.
 - **Hours saved per week** — estimated founder time the workflow reclaims once live. Range, not a point estimate. Honesty matters: if uncertain, widen the range.
 - **Revenue impact per year** — annualized dollars the workflow saves (lost revenue recovered), generates (new income enabled), or protects (churn avoided). Range.
 - **Case study value** — how visibly the workflow demonstrates AI ops work to OUR ICP prospects (vet practice managers, insurance principals, Shopify founders). 1–10.

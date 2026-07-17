@@ -81,7 +81,7 @@ Per the [audit framework v0.1](framework/00-audit-framework-v0.1.md). Every audi
 
 ### SOW scope language — Audit
 
-> **Scope:** Dream Helpers will deliver a Founder Hours Audit consisting of:
+> **Scope:** Tack will deliver a Founder Hours Audit consisting of:
 > (a) one (1) 30-minute discovery call;
 > (b) review and analysis of up to 30 days of operational data provided by the Client;
 > (c) a documented audit report including: time-use audit, bottleneck map, AI Opportunity Matrix, ROI-ranked recommendations, and incumbent-AI gap analysis;
@@ -171,7 +171,7 @@ Three fixed-fee tiers. The Standard tier is the anchor — present first in ever
 
 ### SOW scope language — Implementation (template, fill per tier)
 
-> **Scope:** Dream Helpers will design, build, and hand over to Client the following systems in production: [list the workflows, with named tools and integration points].
+> **Scope:** Tack will design, build, and hand over to Client the following systems in production: [list the workflows, with named tools and integration points].
 >
 > Each workflow includes: (a) configuration of the workflow on the Client's existing tools (no new monthly software exceeding $50/mo introduced without Client's prior written approval); (b) Knowledge Base content where applicable; (c) inclusion in a cross-system operations dashboard; (d) a written runbook and one (1) training video.
 >
@@ -179,7 +179,7 @@ Three fixed-fee tiers. The Standard tier is the anchor — present first in ever
 >
 > **Fee:** [tier price] US dollars, payable 50% on SOW signature and 50% on UAT sign-off.
 >
-> **Liability cap:** Dream Helpers' aggregate liability under this SOW is capped at the total fees actually paid by Client under this SOW. Client is responsible for validating numerical claims and recommendations against their own systems before acting on them. Deliverables are produced using AI tooling and reviewed by Dream Helpers for source traceability and internal consistency.
+> **Liability cap:** Tack' aggregate liability under this SOW is capped at the total fees actually paid by Client under this SOW. Client is responsible for validating numerical claims and recommendations against their own systems before acting on them. Deliverables are produced using AI tooling and reviewed by Tack for source traceability and internal consistency.
 
 ---
 
@@ -248,7 +248,7 @@ Recurring monthly engagement. Auto-debited via Stripe on the 1st of each month. 
 
 ### SOW scope language — Managed Services (template)
 
-> **Scope:** Dream Helpers will provide ongoing optimization, monitoring, and support of the systems previously delivered under [reference to Implementation SOW] for the duration of this engagement. Service includes:
+> **Scope:** Tack will provide ongoing optimization, monitoring, and support of the systems previously delivered under [reference to Implementation SOW] for the duration of this engagement. Service includes:
 > - Monthly written health report including KPI summary and anomaly detection
 > - Up to [1.5 / 4 / 8] hours per calendar month of human time on tweaks, configuration changes, and small enhancements
 > - [Tier-specific deliverables: monthly review call, quarterly automation, quarterly retro, Slack channel access]
@@ -259,7 +259,7 @@ Recurring monthly engagement. Auto-debited via Stripe on the 1st of each month. 
 >
 > **Fee:** [tier price] US dollars per month, auto-debited on the first business day of each month.
 >
-> **Liability cap:** Dream Helpers' aggregate liability under this SOW is capped at fees paid in the trailing twelve (12) months.
+> **Liability cap:** Tack' aggregate liability under this SOW is capped at fees paid in the trailing twelve (12) months.
 
 ---
 

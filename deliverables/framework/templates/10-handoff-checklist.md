@@ -1,7 +1,7 @@
 # Template — Handoff Package Checklist
 
 **Status:** Standard handoff delivery package + training video script outline. Used in Week 5 (Standard tier) or final week of build (Starter / Comprehensive).
-**Purpose:** Hand the working system to the client cleanly. Includes a training video, runbook, monitoring plan, and a scheduled 30-day check-in. Handoff is the moment Dream Helpers steps out — the client must be able to operate the system without us.
+**Purpose:** Hand the working system to the client cleanly. Includes a training video, runbook, monitoring plan, and a scheduled 30-day check-in. Handoff is the moment Tack steps out — the client must be able to operate the system without us.
 **Inputs:** UAT-signed-off system, [methodology v0.1](../01-implementation-methodology-v0.1.md), Architecture Decision Records from Week 1.
 **Output:** delivered handoff package + signed handoff acknowledgment + scheduled 30-day check-in.
 
@@ -25,7 +25,7 @@ A complete handoff includes ALL of these:
 4. **Recovery procedures** — what the client does if something breaks
 5. **Architecture summary** — one-page overview of how the system fits together, with link to the ADRs from Week 1
 6. **Credentials handover** — where every login lives, who has access
-7. **30-day check-in calendar invite** — sent to both client and Dream Helpers
+7. **30-day check-in calendar invite** — sent to both client and Tack
 
 ---
 
@@ -59,7 +59,7 @@ A complete handoff includes ALL of these:
 - [ ] Write the one-page architecture summary (use [outline below](#architecture-summary-outline))
 - [ ] List all credentials and access points handed back to the client (we revoke our access at handoff for systems where applicable)
 - [ ] Send 30-day check-in calendar invite to client decision-maker
-- [ ] Confirm Dream Helpers has revoked any temporary access not needed for the 30-day support window
+- [ ] Confirm Tack has revoked any temporary access not needed for the 30-day support window
 
 ### Friday — Handoff call
 
@@ -125,7 +125,7 @@ Where it lives, what each section means.
 Per workflow: what to do if it stops working.
   - Step 1: check [X]
   - Step 2: try [Y]
-  - Step 3: contact Dream Helpers via [channel]
+  - Step 3: contact Tack via [channel]
 
 ## Where everything lives
 - Workflows: [system + location]
@@ -136,7 +136,7 @@ Per workflow: what to do if it stops working.
 - Training video: [link]
 
 ## Change requests
-How to request changes to what we built. Link to: Managed Services SOW (if active), change order template, or Dream Helpers contact.
+How to request changes to what we built. Link to: Managed Services SOW (if active), change order template, or Tack contact.
 
 ## Reaching us
 - During the 30-day support window: [email + expected response time]
@@ -176,7 +176,7 @@ One page, scannable. The point is the client can look at it and understand the s
 
 ## Sign-off block
 
-I, [client decision-maker name], confirm receipt of the complete handoff package from Dream Helpers, including the training video, runbook, monitoring instructions, recovery procedures, architecture summary, and credentials handover.
+I, [client decision-maker name], confirm receipt of the complete handoff package from Tack, including the training video, runbook, monitoring instructions, recovery procedures, architecture summary, and credentials handover.
 
 I confirm I understand:
 - The 30-day support window is in scope for bug fixes on what was built.

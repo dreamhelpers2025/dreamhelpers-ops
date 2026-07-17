@@ -1,4 +1,4 @@
-# Grant — Onboarding to Dream Helpers Ops
+# Grant — Onboarding to Tack Ops
 
 Welcome. This doc gets you working from your machine in about 30 minutes. If anything below is unclear or breaks, message me and we sort it.
 

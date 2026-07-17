@@ -1,4 +1,4 @@
-# Dream Helpers — Implementation Methodology v0.1
+# Tack — Implementation Methodology v0.1
 
 **Status:** v0.1 — first formalization. Iterates after the Soil Detective beta + 3 paid Implementations.
 **Owner:** Both founders
@@ -73,7 +73,7 @@ Each Implementation produces these six artifacts in order. The order matters —
 
 ## Quality control gates (§11 from v0.4)
 
-Every artifact passes through §11 QC before it leaves Dream Helpers. Non-negotiable.
+Every artifact passes through §11 QC before it leaves Tack. Non-negotiable.
 
 | Artifact | Tier A (smell, ~20 min) | Tier B (re-derivation, 60–90 min) |
 |---|---|---|

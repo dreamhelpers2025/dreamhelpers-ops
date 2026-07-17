@@ -47,7 +47,7 @@
 
 ## TL;DR
 
-The cross-category scan **confirms vet clinics as the primary beachhead** (the only candidate scoring ≥8 on every dimension) and surfaces one structurally similar new candidate worth slotting into Dream Helpers' parallel-test rotation: **independent insurance agencies**.
+The cross-category scan **confirms vet clinics as the primary beachhead** (the only candidate scoring ≥8 on every dimension) and surfaces one structurally similar new candidate worth slotting into Tack' parallel-test rotation: **independent insurance agencies**.
 
 v0.4 adds insurance agencies as a "ready-to-swap" parallel test that activates if Shopify produces zero qualified discovery calls by Day 45, and bakes in a hard Day-90 kill criterion for Shopify.
 

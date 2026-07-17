@@ -1,8 +1,9 @@
-# Dream Helpers — Business Model v0.4
+# Tack — Business Model v0.4
 
 **Status:** Draft for Mon 6/22 working session
 **Owner:** Both founders
-**Purpose:** Define what Dream Helpers sells, to whom, for how much, and how it actually gets delivered given (a) the split between AI-as-workhorse and human-as-interface and (b) the 2026 reality that bundled incumbent AI (Shopify Sidekick, Claude for Small Business, HubSpot Breeze) is rapidly absorbing the bottom of the market.
+**Legal & branding:** "Tack" is the trading name (DBA). The legal entity is **Dreamhelpers LLC** (Washington). Contracts, SOWs, insurance, and bank accounts all sign as "Dreamhelpers LLC dba Tack." All public-facing materials (website, email, social, decks) use "Tack." Renamed from "Dream Helpers" on 2026-06-27 after WHOIS + trademark + reference-brand analysis; see [`deliverables/09-brand-identity-v0.1.md`](09-brand-identity-v0.1.md) for the brand-identity foundation.
+**Purpose:** Define what Tack sells, to whom, for how much, and how it actually gets delivered given (a) the split between AI-as-workhorse and human-as-interface and (b) the 2026 reality that bundled incumbent AI (Shopify Sidekick, Claude for Small Business, HubSpot Breeze) is rapidly absorbing the bottom of the market.
 
 ## Glossary (read once, then skim)
 
@@ -249,7 +250,7 @@ Every service is one of: a one-shot deliverable (Audit), a system the client run
 
 ### What we call ourselves externally
 
-**Company:** Dream Helpers.
+**Company:** Tack.
 
 **Services (vet):** Practice Hours Audit, Practice Hours Implementation, Practice Hours Managed.
 
@@ -263,11 +264,11 @@ Every service is one of: a one-shot deliverable (Audit), a system the client run
 
 ### Positioning statement (vet)
 
-> Dream Helpers gives independent veterinary practice managers back 10–20 hours per month by installing AI-powered operating systems on top of their existing PIMS and tools — without making them switch software or learn anything new.
+> Tack gives independent veterinary practice managers back 10–20 hours per month by installing AI-powered operating systems on top of their existing PIMS and tools — without making them switch software or learn anything new.
 
 ### Positioning statement (Shopify)
 
-> Dream Helpers helps founder-run Shopify brands cut 10–20 hours per month from their personal calendar by connecting the cross-system work Sidekick and Claude for Small Business can't reach — your VA, your inbox, your Klaviyo, your 3PL.
+> Tack helps founder-run Shopify brands cut 10–20 hours per month from their personal calendar by connecting the cross-system work Sidekick and Claude for Small Business can't reach — your VA, your inbox, your Klaviyo, your 3PL.
 
 Note the Shopify version **explicitly names the incumbent AI products**. This is the only honest play. Founders already know about Sidekick; pretending we compete with it is a lost objection. We position next to it.
 
@@ -440,7 +441,7 @@ These need a human call, not an AI draft:
 4. **E&O insurance.** Required before first paid Implementation per §11. ~$400–$800/yr small-business tech E&O. Decide which carrier.
 5. **Visual identity.** Use existing dreamhelpers.org system or evolve for the service line?
 6. **Founder time split.** Primary-sales / primary-delivery, or both do both? Implementation capacity cap of 1 per founder per week makes this load-bearing.
-7. **Disclosure language in SOW.** §11 proposes: "Deliverables are produced using AI tooling and reviewed by Dream Helpers for source-traceability and internal consistency. Clients are responsible for validating numerical claims against their own systems before acting on recommendations." Adopt as written, or modify?
+7. **Disclosure language in SOW.** §11 proposes: "Deliverables are produced using AI tooling and reviewed by Tack for source-traceability and internal consistency. Clients are responsible for validating numerical claims against their own systems before acting on recommendations." Adopt as written, or modify?
 8. **Pilot client posture.** Free reference / discounted $375 / full-price $750 with case study rights?
 9. **Vet beachhead acquisition strategy.** Pay for VMG sponsor slot ($), buy IVPA quarterly CE webinar sponsorship ($), or approach grass-roots through Veterinary Practice Owners Advice Line FB group (free + slow)?
 10. **Insurance agency parallel-test activation date.** New in v0.4. Default is Day 45 contingent on Shopify producing zero qualified discovery calls. Confirm or move earlier (Week 2 for a true 3-way parallel test).
@@ -497,7 +498,7 @@ The "humans don't substantively review" stance creates a negligent-misrepresenta
 
 1. **Tech E&O / professional indemnity policy.** Confirm AI exclusion language ("silent AI") is absent. ~$400–$800/yr for small-business tech E&O.
 2. **SOW disclosure language:**
-   > "Deliverables are produced using AI tooling and reviewed by Dream Helpers for source-traceability and internal consistency. Clients are responsible for validating numerical claims against their own systems before acting on recommendations."
+   > "Deliverables are produced using AI tooling and reviewed by Tack for source-traceability and internal consistency. Clients are responsible for validating numerical claims against their own systems before acting on recommendations."
 3. **Per-engagement liability cap** equal to fees paid, written into every SOW.
 
 ---

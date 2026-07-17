@@ -32,7 +32,7 @@ export default function App() {
             <div className="h-7 w-7 rounded-md bg-gradient-to-br from-emerald-400 to-sky-400 flex items-center justify-center text-ink-950 font-bold text-sm">DH</div>
             <div>
               <div className="text-sm font-semibold text-ink-50 leading-none">Founder Liberation OS</div>
-              <div className="text-[10px] text-ink-500 mt-0.5">Dream Helpers · 4-week command</div>
+              <div className="text-[10px] text-ink-500 mt-0.5">Tack · 4-week command</div>
             </div>
           </div>
 

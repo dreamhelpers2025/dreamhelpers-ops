@@ -123,7 +123,7 @@ The first 3 scenarios run on autopilot. Scenarios 4 and 5 are manually triggered
 
 ### Step 3 — Google Drive folder template (15 min)
 
-1. In Drive, create a parent folder: `Dream Helpers — Audits` (set sharing: dreamhelpers2025 only).
+1. In Drive, create a parent folder: `Tack — Audits` (set sharing: dreamhelpers2025 only).
 2. Inside, create a template subfolder: `_TEMPLATE — Client Audit Folder`. Inside it create empty subfolders:
    - `01 — Questionnaire Response`
    - `02 — Client Data Uploads`
@@ -143,7 +143,7 @@ Sign up for Make.com Core at https://make.com using the `dreamhelpers2025` Googl
 **Actions:**
 1. **Google Drive → Copy Folder**: copy `_TEMPLATE — Client Audit Folder` → rename to `[Client Business Name] — Audit YYYY-MM-DD`
 2. **Gmail → Send Email**: to prospect, from `audits@dreamhelpers.org` (or `dreamhelpers2025@gmail.com` until we set up custom domain email)
-   - Subject: `Welcome to the Dream Helpers audit — next steps inside`
+   - Subject: `Welcome to the Tack audit — next steps inside`
    - Body: see "Email Template 1" below
 3. **HTTP → PATCH Gist**: update our OS dashboard Gist with a new audit record. See "OS Dashboard Webhook Spec" below.
 4. **Slack → Post Message** (or Gmail if no Slack): "New audit prospect: [name] booked for [date/time]. Drive folder: [link]"
@@ -249,7 +249,7 @@ Make.com PATCHes the Gist that backs our Founder Liberation OS dashboard. The da
 ### Template 1 — Welcome (sent after Calendly booking)
 
 ```
-Subject: Welcome to your Dream Helpers audit — next steps inside
+Subject: Welcome to your Tack audit — next steps inside
 
 Hi [first name],
 
@@ -267,7 +267,7 @@ You don't need to upload anything yet — that comes after our call. Just confir
 
 Looking forward to talking.
 
-Dream Helpers
+Tack
 ```
 
 ### Template 2 — Data upload checklist (sent after questionnaire submission)
@@ -294,7 +294,7 @@ Drop everything into: [Drive folder link] in the "02 — Client Data Uploads" su
 
 If anything on this list isn't applicable to your business, just tell us — we adapt.
 
-Dream Helpers
+Tack
 ```
 
 ### Template 3 — Walkthrough reminder (manual trigger, Day 4)
@@ -318,7 +318,7 @@ We'll send the full deck as a PDF after the call so you can review or share with
 
 See you tomorrow.
 
-Dream Helpers
+Tack
 ```
 
 ### Template 4 — Post-walkthrough deck delivery (manual trigger)
@@ -343,7 +343,7 @@ Three things on your end:
 
 Thanks for trusting us with the audit.
 
-Dream Helpers
+Tack
 ```
 
 ---

@@ -1,4 +1,4 @@
-# Dream Helpers — Audit Framework v0.1
+# Tack — Audit Framework v0.1
 
 **Status:** v0.1 — first formalization. Will iterate after Soil Detective beta and the first 3 paid audits.
 **Owner:** Both founders
@@ -43,7 +43,7 @@ Each audit produces these six artifacts in this sequence. The order matters — 
 
 ## Quality control gates (§11 from v0.4)
 
-Every artifact passes through §11 QC before it leaves Dream Helpers. Non-negotiable.
+Every artifact passes through §11 QC before it leaves Tack. Non-negotiable.
 
 | Artifact | Tier A (smell, ~20 min) | Tier B (re-derivation, 60–90 min) |
 |---|---|---|

@@ -271,7 +271,7 @@ Once you send this back, we'll:
 
 We're treating you as our first formal beta. Anything that feels off or wrong in this form — tell us. Your feedback shapes how we run audits for every paying client after you.
 
-— Dream Helpers
+— Tack
 
 ---
 

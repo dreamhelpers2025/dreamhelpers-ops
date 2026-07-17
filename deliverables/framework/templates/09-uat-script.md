@@ -42,7 +42,7 @@ For Comprehensive tier (4 workflows): 12–16 test cases total minimum.
 
 Before sending the script to the client:
 
-1. **Self-run every test case** as Dream Helpers. All must pass on our end before client sees the script.
+1. **Self-run every test case** as Tack. All must pass on our end before client sees the script.
 2. **§11 Tier B re-derivation** on every behavioral claim made in the script (e.g., "the classifier routes correctly in this scenario" — confirm with fresh prompts independently).
 3. **Confirm the client has all access required** to run each test case (login, sample data, etc.).
 4. **Schedule a 30-min UAT kickoff call** where we walk the client through the first 2–3 cases live, then leave them to complete the rest async.
@@ -116,7 +116,7 @@ We then invoice the 50% balance per the SOW payment terms.
 
 I, [client decision-maker name], have run or supervised the test cases above and confirm that all are Pass or Conditional Pass.
 
-I authorize Dream Helpers to invoice the remaining 50% balance per the SOW and proceed to handoff.
+I authorize Tack to invoice the remaining 50% balance per the SOW and proceed to handoff.
 
 Open conditional-pass items and any future-phase requests are logged in the engagement folder and acknowledged as out-of-scope for the current SOW.
 

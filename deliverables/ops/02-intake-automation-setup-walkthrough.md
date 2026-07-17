@@ -106,7 +106,7 @@ Edit `src/components/IntakeForm.tsx` in the `dreamhelpers-intake` repo. Push to 
 ## Step 3 — Google Drive folder template (10 min)
 
 1. Go to **https://drive.google.com** signed in as `dreamhelpers2025`.
-2. **New → Folder** named `Dream Helpers — Audits`. This is the parent of every client audit folder going forward.
+2. **New → Folder** named `Tack — Audits`. This is the parent of every client audit folder going forward.
 3. Open it. Inside, **New → Folder** named `_TEMPLATE — Client Audit Folder` (underscore prefix keeps it at the top of any sort).
 4. Inside the template folder, create 5 subfolders:
    - `01 — Questionnaire Response`
@@ -148,7 +148,7 @@ Edit `src/components/IntakeForm.tsx` in the `dreamhelpers-intake` repo. Push to 
 5. Click **+** after the trigger to add the next module.
 6. **Google Drive → Copy a Folder**:
    - **Source folder:** the `_TEMPLATE — Client Audit Folder` (use the ID from Step 3)
-   - **Destination folder:** parent `Dream Helpers — Audits`
+   - **Destination folder:** parent `Tack — Audits`
    - **New folder name:** click into the field and use Make's expression builder. The expression is: `[answer to "business name"] — Audit [today's date]`. In Make's syntax: `{{1.payload.questions_and_answers[].answer}} — Audit {{formatDate(now; "YYYY-MM-DD")}}`. (The questions_and_answers array contains all custom Calendly questions; Make's UI helps you click to the right one.)
 7. Right-click the line between the trigger and this module → **Run this module only** to test the folder copy. Pick a real Calendly booking from your test if possible, or use Make's "fake data" option.
 8. **Segment normalization helper.** Before the Gmail send, add a **Tools → Set multiple variables** module that converts the Calendly "type of business" answer (e.g., `Veterinary clinic`) into the lowercase segment key (`vet`) that the Tally URL parameter expects. Define variables:
@@ -159,7 +159,7 @@ Edit `src/components/IntakeForm.tsx` in the `dreamhelpers-intake` repo. Push to 
    - **Connection:** `dreamhelpers2025-gmail`
    - **To:** `{{1.payload.email}}` (the prospect's email from Calendly)
    - **From:** `dreamhelpers2025@gmail.com`
-   - **Subject:** `Welcome to your Dream Helpers audit — next steps inside`
+   - **Subject:** `Welcome to your Tack audit — next steps inside`
    - **Content type:** HTML
    - **Body:** copy **Email Template 1** from [`01-intake-automation-playbook.md` § "Email templates"](01-intake-automation-playbook.md#email-templates). Replace placeholders:
      - `[first name]` → `{{1.payload.name}}`
@@ -212,7 +212,7 @@ begin
     url := 'https://api.resend.com/emails',
     headers := jsonb_build_object('Content-Type', 'application/json', 'Authorization', format('Bearer %s', resend_key)),
     body := jsonb_build_object(
-      'from', 'Dream Helpers Intake <onboarding@resend.dev>',
+      'from', 'Tack Intake <onboarding@resend.dev>',
       'to', jsonb_build_array('dreamhelpers2025@gmail.com'),
       'subject', format('[Audit] New intake: %s (%s)', coalesce(new.client_name, 'unknown'), new.segment),
       'html', format('<h2>New audit intake submitted</h2><p><strong>Client:</strong> %s</p><p><strong>Segment:</strong> %s</p>',
@@ -227,10 +227,10 @@ begin
       url := 'https://api.resend.com/emails',
       headers := jsonb_build_object('Content-Type', 'application/json', 'Authorization', format('Bearer %s', resend_key)),
       body := jsonb_build_object(
-        'from', 'Dream Helpers <onboarding@resend.dev>',
+        'from', 'Tack <onboarding@resend.dev>',
         'to', jsonb_build_array(prospect_email),
-        'subject', 'Got it — your Dream Helpers audit intake is in',
-        'html', '<p>Thanks for submitting your audit intake. We''ll review and reach out within 1 business day with the next step — usually a quick confirmation call and the shared folder for any data exports.</p><p>— Dream Helpers</p>'
+        'subject', 'Got it — your Tack audit intake is in',
+        'html', '<p>Thanks for submitting your audit intake. We''ll review and reach out within 1 business day with the next step — usually a quick confirmation call and the shared folder for any data exports.</p><p>— Tack</p>'
       )
     ) into request_id;
   end if;
@@ -250,7 +250,7 @@ If you skip this enhancement, the prospect still sees the thank-you page that co
 
 1. **+ Create scenario**. Title: `3. Data Received`.
 2. First module: **Google Drive → Watch Files in a Folder**:
-   - **Folder:** parent `Dream Helpers — Audits` (Make watches recursively — fires on any new file in any client subfolder)
+   - **Folder:** parent `Tack — Audits` (Make watches recursively — fires on any new file in any client subfolder)
    - **Limit:** 5
 3. Next module: **Gmail → Send Email** to `dreamhelpers2025@gmail.com`:
    - **Subject:** `[Audit] New file uploaded: {{1.name}}`
@@ -290,7 +290,7 @@ Email her:
 
 > Hi Rosalinda — we've set up the formal audit intake. Book a confirmation discovery call here when convenient: [your Calendly link]. Booking will auto-trigger the questionnaire and a shared folder for the audit materials. We pre-filled what we already know from our meeting; you just confirm or fill in the gaps.
 >
-> Dream Helpers
+> Tack
 
 She books → the whole pipeline fires automatically → you and Grant get pinged at each stage.
 

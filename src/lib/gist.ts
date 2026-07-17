@@ -62,7 +62,7 @@ export async function saveToGist(settings: SyncSettings, state: AppState): Promi
     const res = await gistFetch('', settings, {
       method: 'POST',
       body: JSON.stringify({
-        description: 'Dream Helpers Founder Liberation OS state',
+        description: 'Tack Founder Liberation OS state',
         public: false,
         ...body,
       }),

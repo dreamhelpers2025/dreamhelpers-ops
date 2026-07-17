@@ -8,7 +8,7 @@
 ## Glossary (read once, then skim)
 
 - **Buyer-side decision-maker** — the person on the client's side who can approve scope changes, sign off UAT, and make calls on the fly. Critical: not always the same as the buyer who signed the SOW.
-- **Access provisioning** — the credentials, OAuth grants, and shared folders Dream Helpers needs to do the work.
+- **Access provisioning** — the credentials, OAuth grants, and shared folders Tack needs to do the work.
 - **Hard scope** — the explicit list of workflows in the SOW. Anything outside this list is out of scope until a change order is signed.
 - **Soft scope (de-scoped)** — things the audit recommended but the client decided not to do now. We name them explicitly so they don't sneak back in.
 
@@ -72,7 +72,7 @@ WEEKLY CHECK-IN:
 
 POST-CALL NEXT 24 HOURS:
 - Client to complete: [items]
-- Dream Helpers to complete: [items]
+- Tack to complete: [items]
 ```
 
 ---
@@ -86,9 +86,9 @@ SYSTEM: [name, e.g., Squarespace / Klaviyo / ezyVet / Applied Epic]
 
 NEEDED ACCESS:
 - [ ] Admin login to the system
-- [ ] OAuth grant to Dream Helpers app (if applicable)
+- [ ] OAuth grant to Tack app (if applicable)
 - [ ] API key with appropriate scope (read/write/admin)
-- [ ] IP allowlist (if the system has one): add Dream Helpers' dev server IP
+- [ ] IP allowlist (if the system has one): add Tack' dev server IP
 - [ ] Shared folder in Drive (or equivalent) for exports and reports
 
 WHO PROVISIONS:
@@ -139,7 +139,7 @@ Before the kickoff call ends, confirm in writing (in the kickoff notes):
 
 - [ ] SOW signed by both parties (link to PDF)
 - [ ] 50% deposit received in Stripe (confirmation number)
-- [ ] Tech E&O insurance is active for Dream Helpers (policy number, expiry date)
+- [ ] Tech E&O insurance is active for Tack (policy number, expiry date)
 - [ ] Make AI Agents rebuild check passed (documented in engagement folder)
 - [ ] Access provisioning started (status of each system)
 

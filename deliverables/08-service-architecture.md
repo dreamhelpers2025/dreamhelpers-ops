@@ -1,8 +1,8 @@
 # Service Architecture — The Locked v1.0
 
-**Status:** Single source of truth for what Dream Helpers sells, who we sell to, what each engagement actually delivers, and how delivery actually happens. Locks Week 1.
+**Status:** Single source of truth for what Tack sells, who we sell to, what each engagement actually delivers, and how delivery actually happens. Locks Week 1.
 **Owner:** Both founders. Maintain this as the "if you only read one doc, read this one" reference.
-**Purpose:** When a prospect asks "what does Dream Helpers actually do?" — this is the answer in one doc. When Grant or a future hire needs to understand the business, this is where they start.
+**Purpose:** When a prospect asks "what does Tack actually do?" — this is the answer in one doc. When Grant or a future hire needs to understand the business, this is where they start.
 **Source docs consolidated:** [business model v0.4](01-founder-liberation-business-model.md), [service packages & pricing v1.0](07-service-packages-and-pricing.md), [audit framework v0.1](framework/00-audit-framework-v0.1.md), [implementation methodology v0.1](framework/01-implementation-methodology-v0.1.md).
 
 ## Glossary (read once, then skim)
@@ -159,7 +159,7 @@ This is the load-bearing split that makes the unit economics work.
 - Real-time judgment when a client says something the brief didn't anticipate
 - Closing the sale (conviction can't be faked)
 - Eyes and ears the AI doesn't have (tone, hesitation, what they didn't say)
-- §11 QC on every external artifact before it leaves Dream Helpers
+- §11 QC on every external artifact before it leaves Tack
 
 ### What Claude is genuinely weak at (and we don't sell around)
 
@@ -180,7 +180,7 @@ This is the load-bearing split that makes the unit economics work.
 **Legal protections layered on top:**
 - Tech E&O insurance active before first paid Implementation
 - Per-engagement liability cap written into every SOW (cap = fees paid)
-- AI disclosure language in every SOW: "Deliverables are produced using AI tooling and reviewed by Dream Helpers for source-traceability and internal consistency. Clients are responsible for validating numerical claims against their own systems before acting on recommendations."
+- AI disclosure language in every SOW: "Deliverables are produced using AI tooling and reviewed by Tack for source-traceability and internal consistency. Clients are responsible for validating numerical claims against their own systems before acting on recommendations."
 
 ---
 

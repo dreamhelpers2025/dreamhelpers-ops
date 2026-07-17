@@ -151,7 +151,7 @@ Dark / Text         █████  #1D231C  (forest green)
 1. **Are the supporting greens (#3D5A31 / #4A6B3C / #5D8049) part of her vision** or should the rebuild reduce to lavender + cream + dark green only?
 2. **Does she want to keep any of the rust / mustard tones** the rebuild added (#A44A3F, #B89858, #C8A96A), or drop them entirely?
 3. **Flower Power for everything, or just headlines?** The font is decorative — it's gorgeous for hero text but illegible at body sizes. Recommend: headlines only, with Inter or new-spirit for paragraphs.
-4. **Does she have her own Adobe Fonts subscription**, or should we use Dream Helpers' account to publish the Flower Power kit for the rebuild? (Affects ongoing access if we ever stop hosting.)
+4. **Does she have her own Adobe Fonts subscription**, or should we use Tack' account to publish the Flower Power kit for the rebuild? (Affects ongoing access if we ever stop hosting.)
 5. **Patreon and any future channels** — does the brand spec apply there too, or are those separate visual identities?
 
 ## Next step

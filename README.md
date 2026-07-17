@@ -1,4 +1,4 @@
-# Dream Helpers · Founder Liberation OS
+# Tack · Founder Liberation OS
 
 Central command for Grant and partner during the 4-week go-to-market sprint.
 
