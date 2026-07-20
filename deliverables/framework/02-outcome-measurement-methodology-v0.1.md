@@ -200,7 +200,7 @@ We can't directly count context switches — that would require eye tracking or 
 
 ### What it does NOT measure
 
-- True attention residue (Gloria Mark's research shows real switch costs even without a ping — we don't capture that)
+- True attention residue ([Gloria Mark's 2008 CHI paper](https://ics.uci.edu/~gmark/chi08-mark.pdf) shows real switch costs from interruption; Sophie Leroy's 2009 work formalized the "attention residue" term — we don't capture either directly)
 - Ambient/informational notifications (batch-read newsletters, calendar day-ahead summaries)
 - Notifications outside work hours
 - Notifications the founder chose to check (vs was interrupted by)
@@ -234,7 +234,9 @@ Same channels, same categorization, same representative week, at Days 30/60/90.
 - −40% represents a reduction a founder can **feel** — the difference between 30 pings/day and 18/day is a different workday
 - **Below −20%:** we didn't route enough away from founder. Review workflow scope.
 - **Above −60%:** probably over-suppressing — founder loses signal on things they actually need to see. Check that no important escalations are being missed.
-- **Empirical anchor:** Gloria Mark's attention-residue research (~23 min to fully refocus after each interruption), Cal Newport's digital minimalism data on effective batching
+- **Empirical anchors:**
+  - [Gloria Mark et al., "The Cost of Interrupted Work: More Speed and Stress" (CHI 2008)](https://ics.uci.edu/~gmark/chi08-mark.pdf) — the canonical ~23-minute average time to return to a task after an interruption
+  - [Cal Newport, *Deep Work* (2016)](https://calnewport.com/) — argues for batching cognitively-demanding work into long, uninterrupted stretches, and treats interruption reduction as a first-order productivity intervention. Newport's *Digital Minimalism* (2019) extends the argument specifically to notification channels — which is exactly what this metric proxies.
 
 ### Mandatory methodology footnote
 
