@@ -346,6 +346,8 @@ For every engagement we instrument and report these four:
 
 These metrics appear in every audit, monthly report, and case study. They are the only outcome language we use externally.
 
+**Measurement methodology:** how each of the four is measured — baseline pull, post-implementation cadence, §11 Tier B re-derivation, attribution windows, and presentation language — is defined in [`framework/02-outcome-measurement-methodology-v0.1.md`](framework/02-outcome-measurement-methodology-v0.1.md). Every number that ends up in a client-facing artifact must trace to that doc.
+
 ---
 
 ## 5. Pricing hypotheses (corrected)
